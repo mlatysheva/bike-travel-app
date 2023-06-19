@@ -1,0 +1,23 @@
+.header {
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-image: url('../../../../assets/images/logo.png');
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
+  z-index: 150;
+}
+
+@media screen and (max-width: 550px) {
+  .header-wrapper {
+    height: var(--header-height-mob);
+  }
+}
