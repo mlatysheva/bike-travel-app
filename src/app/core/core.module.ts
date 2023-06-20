@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,7 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
     FooterComponent,
     ProgressBarComponent,
   ],
-  imports: [CommonModule, RouterModule, FormsModule],
+  imports: [CommonModule, RouterModule, FormsModule, SharedModule],
   exports: [HeaderComponent, FooterComponent, ProgressBarComponent, MenuComponent],
 })
 export class CoreModule { }
