@@ -1,7 +1,9 @@
 .container {
-  //width: 100%;
+  width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 1rem auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   flex: 1;
 }
 
@@ -11,6 +13,7 @@
   left: 0;
   width: 100%;
   height: 100%;
+  display: flex;
   background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('../../../../assets/images/manarola.jpg');
   background-position: center;
   background-size: cover;

@@ -1,8 +1,11 @@
 .header {
+  max-width: var(--max-content-width);
   height: 100%;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -14,10 +17,4 @@
   background-position: center;
   cursor: pointer;
   z-index: 150;
-}
-
-@media screen and (max-width: 550px) {
-  .header-wrapper {
-    height: var(--header-height-mob);
-  }
 }
