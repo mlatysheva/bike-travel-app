@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 import { NgxsModule} from "@ngxs/store";
 import { NgxsReduxDevtoolsPluginModule} from "@ngxs/devtools-plugin";
-import { StateModel } from "./store/state.model";
 
 @NgModule({
   declarations: [

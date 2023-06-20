@@ -6,6 +6,7 @@ import { FormsModule } from "@angular/forms";
 import { NgxsModule} from "@ngxs/store";
 import { SearchState } from "../store/slices/search.slice";
 import { HttpClientModule } from "@angular/common/http";
+import {LocationsState} from "../store/slices/locations.slice";
 
 
 @NgModule({
@@ -20,7 +21,7 @@ import { HttpClientModule } from "@angular/common/http";
     SharedModule,
     FormsModule,
     HttpClientModule,
-    NgxsModule.forFeature([SearchState])
+    NgxsModule.forFeature([SearchState, LocationsState])
   ]
 })
 export class MainModule { }
