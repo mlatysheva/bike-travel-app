@@ -2,6 +2,63 @@
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @include mat.core();
 
+$darkblue-palette: (
+  50: #b8cff7,
+  100: #7495d0,
+  200: #94b3e8,
+  300: #406ab2,
+  400: #295298,
+  500: #11397e,
+  600: #183465,
+  700: #071c42,
+  800: #0c192f,
+  900: #0d1524,
+  A100: #94b3e8,
+  A200: #406ab2,
+  A400: #11397e,
+  A700: #071c42,
+  contrast: (50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: rgba(black, 0.87),
+    400: rgba(black, 0.87),
+    500: rgb(225, 222, 222),
+    600: rgb(210, 209, 209),
+    700: rgb(170, 168, 168),
+    800: rgb(183, 182, 182),
+    900: rgb(127, 125, 125),
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: rgb(145, 143, 143),
+    A700: rgb(217, 214, 214),
+  )
+);
+
+$where_client-primary: mat.define-palette($darkblue-palette, 500);
+$where_client-accent: mat.define-palette($darkblue-palette, A400, A200, A700);
+$where_client-warn: mat.define-palette(mat.$red-palette);
+$custom-success: mat.define-palette($darkblue-palette);
+$custom-danger: mat.define-palette(mat.$indigo-palette);
+
+
+$where_client-theme: mat.define-light-theme((color: (primary: $where_client-primary,
+  accent: $where_client-accent,
+  warn: $where_client-warn,
+)));
+
+@include mat.all-component-themes($where_client-theme);
+
+.mat-success {
+  background-color: mat.get-color-from-palette($custom-success, 500);
+  color: mat.get-color-from-palette($custom-success, 500-contrast);
+}
+
+.mat-danger {
+  background-color: mat.get-color-from-palette($custom-danger, 500);
+  color: mat.get-color-from-palette($custom-danger, 500-contrast);
+}
+
+
 :root {
   --light-grey: #e5e5e5;
   --primary-color: #0c2457;

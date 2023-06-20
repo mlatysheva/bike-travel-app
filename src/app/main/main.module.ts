@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { SearchPlaceComponent } from './components/search-place/search-place.component';
 import { SharedModule} from "../shared/shared.module";
-import {FormsModule} from "@angular/forms";
-import {MatTooltipModule} from "@angular/material/tooltip";
+import { FormsModule } from "@angular/forms";
+import { NgxsModule} from "@ngxs/store";
+import {SearchState} from "../store/slices/search.slice";
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import {MatTooltipModule} from "@angular/material/tooltip";
   imports: [
     SharedModule,
     FormsModule,
-    MatTooltipModule
+    NgxsModule.forFeature([SearchState])
   ]
 })
 export class MainModule { }

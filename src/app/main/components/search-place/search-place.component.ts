@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngxs/store';
+import { SetSearchQuery} from "../../../store/actions/search.actions";
 
 @Component({
   selector: 'app-search-place',
@@ -8,9 +10,11 @@ import { Component } from '@angular/core';
 export class SearchPlaceComponent {
 
   searchQuery: string = '';
-  itemFilterText$: string = '';
 
-  onSearch(query: string)  {
-    console.log('searchquery: ', query);
+  constructor(private store: Store) {}
+
+  onSearch()  {
+    console.log('searchQuery', this.searchQuery);
+    this.store.dispatch(new SetSearchQuery(this.searchQuery)).subscribe(() => console.log('dispatched'));
   }
 }
