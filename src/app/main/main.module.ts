@@ -4,7 +4,8 @@ import { SearchPlaceComponent } from './components/search-place/search-place.com
 import { SharedModule} from "../shared/shared.module";
 import { FormsModule } from "@angular/forms";
 import { NgxsModule} from "@ngxs/store";
-import {SearchState} from "../store/slices/search.slice";
+import { SearchState } from "../store/slices/search.slice";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import {SearchState} from "../store/slices/search.slice";
   imports: [
     SharedModule,
     FormsModule,
+    HttpClientModule,
     NgxsModule.forFeature([SearchState])
   ]
 })
