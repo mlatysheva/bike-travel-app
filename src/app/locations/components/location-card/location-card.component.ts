@@ -22,10 +22,8 @@ export class LocationCardComponent {
   renderLocationDetails(id: string): void {
     const location = this.tripadvisorApiService.fetchLocationDetails(id)
       .subscribe((location) => {
-        console.log(location);
         this.store.dispatch(new SetSelectedLocation(location));
       });
-    // this.store.dispatch(new SetSelectedLocationId(id));
     this.router.navigate([`/locations/${id}`]);
   }
 }

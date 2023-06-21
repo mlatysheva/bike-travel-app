@@ -5,7 +5,17 @@ export interface IPhoto {
   caption?: string,
   published_date?: string,
   images?: {
-    additionalProp?: {
+    thumbnail?: {
+      width?: number,
+      url?: string,
+      height?: number
+    },
+    medium?: {
+      width?: number,
+      url?: string,
+      height?: number
+    },
+    large?: {
       width?: number,
       url?: string,
       height?: number
