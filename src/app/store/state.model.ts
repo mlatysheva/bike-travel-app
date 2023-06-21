@@ -1,4 +1,4 @@
-import { ILocation } from "../models/location.model";
+import {ILocation, ILocationData} from "../models/location.model";
 
 export interface AppStateModel {
   searchQuery: string,
@@ -11,4 +11,5 @@ export interface SearchStateModel {
 
 export interface LocationsStateModel {
   fetchedLocations: ILocation[],
+  selectedLocation: ILocationData | null,
 }

@@ -1,0 +1,5 @@
+<div class="locations-list-wrapper" *ngIf="locations$ | async as locations">
+  <div *ngFor="let location of locations">
+    <app-location-card [location]="location"></app-location-card>
+  </div>
+</div>

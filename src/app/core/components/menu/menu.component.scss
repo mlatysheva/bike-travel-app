@@ -2,7 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   color: white;
 
   &.bg-solid {
@@ -10,4 +10,10 @@
       color: #49454f;
     }
   }
+}
+
+.menu a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: inherit;
 }
