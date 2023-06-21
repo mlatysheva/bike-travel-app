@@ -1,0 +1,15 @@
+<mat-card *ngIf="review" class="review-cart">
+  <mat-card-header>
+    <div mat-card-avatar class="user-icon">
+      <mat-icon>user</mat-icon>
+    </div>
+    <mat-card-title>{{ review.title }}</mat-card-title>
+    <mat-card-subtitle>{{ review.published_date }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{ review.text }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button class="action-btn" mat-button>Antworte...</button>
+  </mat-card-actions>
+</mat-card>

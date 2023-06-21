@@ -21,7 +21,6 @@ export class SearchPlaceComponent {
   ) {}
 
   onSearch()  {
-    console.log('searchQuery', this.searchQuery);
     this.store.dispatch(new SetSearchQuery(this.searchQuery))
       .subscribe(() => {
         this.tripadvisorApiService.fetchLocations(this.searchQuery)

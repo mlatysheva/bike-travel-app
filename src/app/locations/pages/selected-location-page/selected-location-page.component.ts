@@ -21,9 +21,6 @@ export class SelectedLocationPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.locationData$.subscribe((data) => {
-      console.log(data);
-      // this.details$ = data.details;
-    });
+    this.locationData$.subscribe((data) => {});
   }
 }

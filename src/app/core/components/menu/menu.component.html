@@ -2,6 +2,6 @@
   <button mat-icon-button routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <a mat-button routerLink="/locations">Orte</a>
-  <a mat-button routerLink="/details">Details</a>
+  <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations">Orte</a>
+  <a *ngIf="selectedLocationId$ | async " mat-button routerLink="/details">Details</a>
 </div>

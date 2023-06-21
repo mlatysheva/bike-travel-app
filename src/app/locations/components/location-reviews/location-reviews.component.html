@@ -1,15 +1,8 @@
 <div class="reviews-wrapper" *ngIf="locationReviews$ | async as locationReviews">
   <div class="reviews-header">
     <h2 class="reviews-title">Reviews</h2>
-    <img class="reviews-img" src="{{ratingImageUrl$ | async }}" alt="TripAdvisor rating" width="100px" height="50px">
   </div>
   <div *ngFor="let review of locationReviews">
-    <div>
-      {{review.rating}}/5
-      {{review.title}}
-      {{review.text}}
-      {{review.user}}
-      {{review.published_date}}
-    </div>
+    <app-review-card [review]="review"></app-review-card>
   </div>
 </div>

@@ -13,4 +13,9 @@ export class LocationReviewsComponent {
   @Select(LocationsState.getSelectedLocationReviews) locationReviews$!: Observable<IReview[]>;
 
   @Select(LocationsState.getSelecteLocationRatingImage) ratingImageUrl$!: Observable<string>;
+
+  constructor() {
+    this.ratingImageUrl$.subscribe((source) => {})
+  }
+
 }
