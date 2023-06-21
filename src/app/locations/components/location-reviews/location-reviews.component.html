@@ -1,7 +1,6 @@
 <div class="reviews-wrapper" *ngIf="locationReviews$ | async as locationReviews">
   <div class="reviews-header">
     <h2 class="reviews-title">Reviews</h2>
-    <img class="reviews-img" src="" alt="TripAdvisor rating" width="100px" height="50px">
   </div>
   <div *ngFor="let review of locationReviews">
     <app-review-card [review]="review"></app-review-card>
