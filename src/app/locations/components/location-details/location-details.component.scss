@@ -1,0 +1,19 @@
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.details-field {
+  display: flex;
+  flex-direction: row;
+}
+
+.left-subfield {
+  width: 100px;
+}
+
+.small-text {
+  margin: 0;
+  font-size: 14px;
+}

@@ -1,0 +1,30 @@
+<div class="location-details">
+  <div *ngIf="locationDetails$ | async as locationDetails">
+    <h2>{{ locationDetails.name }}</h2>
+    <p *ngIf="locationDetails.description">{{ locationDetails.description }}</p>
+    <div class="details-wrapper">
+      <div class="details-field">
+        <div class="left-subfield">Address</div>
+        <div class="right-subfield">
+          <p class="small-text">{{ locationDetails.address_obj?.country }}</p>
+          <p class="small-text">{{ locationDetails.address_obj?.postalcode }}</p>
+          <p class="small-text">{{ locationDetails.address_obj?.state }}</p>
+          <p class="small-text">{{ locationDetails.address_obj?.city }}</p>
+          <p class="small-text">{{ locationDetails.address_obj?.street1 }}</p>
+          <p class="small-text">{{ locationDetails.address_obj?.street2 }}</p>
+        </div>
+      </div>
+      <div class="details-field" *ngIf="locationDetails.phone">
+        <div class="left-subfield">Phone</div>
+        <div class="right-subfield">
+          {{ locationDetails.phone }}
+        </div>
+      </div>
+      <div class="details-field" *ngIf="locationDetails.web_url">
+        <div class="left-subfield">Website</div>
+        <div class="right-subfield">
+          {{ locationDetails.web_url }}
+        </div>
+      </div>
+    </div>
+</div>

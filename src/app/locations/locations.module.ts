@@ -6,6 +6,7 @@ import {RouterModule, Routes} from "@angular/router";
 import { LocationsListComponent } from './components/locations-list/locations-list.component';
 import { LocationCardComponent } from './components/location-card/location-card.component';
 import { SelectedLocationPageComponent } from './pages/selected-location-page/selected-location-page.component';
+import { LocationDetailsComponent } from './components/location-details/location-details.component';
 
 const routes: Routes = [
   {
@@ -23,7 +24,8 @@ const routes: Routes = [
     LocationsPageComponent,
     LocationsListComponent,
     LocationCardComponent,
-    SelectedLocationPageComponent
+    SelectedLocationPageComponent,
+    LocationDetailsComponent
   ],
   imports: [
     CommonModule,

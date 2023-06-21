@@ -55,4 +55,9 @@ export class LocationsState {
   static getSelectedLocationReviews(state: LocationsStateModel) {
     return state.selectedLocation?.reviews;
   }
+
+  @Selector()
+  static getSelectedLocationDetails(state: LocationsStateModel) {
+    return state.selectedLocation?.details;
+  }
 }
