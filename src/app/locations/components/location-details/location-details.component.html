@@ -1,6 +1,7 @@
 <div class="location-details">
   <div *ngIf="locationDetails$ | async as locationDetails">
     <h2>{{ locationDetails.name }}</h2>
+    <app-location-photos></app-location-photos>
     <p *ngIf="locationDetails.description">{{ locationDetails.description }}</p>
     <div class="details-wrapper">
       <div class="details-field">
@@ -22,9 +23,9 @@
       </div>
       <div class="details-field" *ngIf="locationDetails.web_url">
         <div class="left-subfield">Website</div>
-        <div class="right-subfield">
+        <a class="right-subfield" target="_blank" [href]="locationDetails.web_url">
           {{ locationDetails.web_url }}
-        </div>
+        </a>
       </div>
     </div>
 </div>

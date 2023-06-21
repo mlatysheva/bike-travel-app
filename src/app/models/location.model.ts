@@ -56,7 +56,7 @@ export interface ILocationDetails {
   category?: any,
   subcategory?: any,
   groups?: any,
-  styels?: any,
+  styles?: any,
   neighborhood_info?: any,
   trip_types?: any,
   awards?: any,

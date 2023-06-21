@@ -60,4 +60,9 @@ export class LocationsState {
   static getSelectedLocationDetails(state: LocationsStateModel) {
     return state.selectedLocation?.details;
   }
+
+  @Selector()
+  static getSelecteLocationRatingImage(state: LocationsStateModel) {
+    return state.selectedLocation?.details.rating_image_url;
+  }
 }

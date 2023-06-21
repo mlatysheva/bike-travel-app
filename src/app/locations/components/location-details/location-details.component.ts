@@ -1,25 +1,16 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ILocationDetails } from "../../../models/location.model";
-import { Select, Store } from "@ngxs/store";
+import { Select } from "@ngxs/store";
 import { LocationsState } from "../../../store/slices/locations.slice";
-import {Observable} from "rxjs";
+import { Observable } from "rxjs";
+import {IPhoto} from "../../../models/photos.model";
 
 @Component({
   selector: 'app-location-details',
   templateUrl: './location-details.component.html',
   styleUrls: ['./location-details.component.scss']
 })
-export class LocationDetailsComponent implements OnInit {
-  // @Input() locationDetails!: ILocationDetails;
+export class LocationDetailsComponent {
   @Select(LocationsState.getSelectedLocationDetails) locationDetails$!: Observable<ILocationDetails>;
-
-  constructor(
-    private store: Store,
-  ) { }
-
-  ngOnInit(): void {
-    this.locationDetails$.subscribe((data) => {
-      console.log(data);
-    });
-  }
+  constructor() { }
 }
