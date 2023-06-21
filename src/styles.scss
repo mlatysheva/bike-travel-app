@@ -61,6 +61,7 @@ $where_client-theme: mat.define-light-theme((color: (primary: $where_client-prim
 
 :root {
   --light-grey: #e5e5e5;
+  --dark-grey: #49454f;
   --primary-color: #0c2457;
   --link-hover-color: #4570c1;
   --secondary-color: rgb(255, 217, 0);
@@ -79,10 +80,16 @@ body {
   height: 100%;
   min-height: 100vh;
   margin: 0;
+  color: var(--dark-grey);
   box-sizing: inherit;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
+}
+
+h1, h2, h3 {
+  font-family: Ubuntu, "Helvetica Neue", sans-serif;
+  font-weight: 400;
 }
 
 app-root {
@@ -102,14 +109,17 @@ app-header {
   }
 }
 
-app-main-page {
+app-main-page, app-locations-page, app-selected-location-page {
   display: flex;
   flex-direction: column;
   flex: 1;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 app-footer {
   height: var(--footer-height);
+  margin-top: auto;
   flex-shrink: 0;
   background-color: rgba(116, 118, 122, 0.4);
   z-index: 100;

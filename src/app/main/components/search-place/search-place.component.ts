@@ -3,6 +3,7 @@ import { Store } from '@ngxs/store';
 import { SetSearchQuery} from "../../../store/actions/search.actions";
 import { TripadvisorAPIService } from "../../../shared/services/tripadvisor-api.service";
 import { SetLocations } from "../../../store/actions/locations.actions";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-search-place',
@@ -16,6 +17,7 @@ export class SearchPlaceComponent {
   constructor(
     private store: Store,
     private tripadvisorApiService: TripadvisorAPIService,
+    private router: Router,
   ) {}
 
   onSearch()  {
@@ -25,5 +27,6 @@ export class SearchPlaceComponent {
         this.tripadvisorApiService.fetchLocations(this.searchQuery)
           .subscribe((locations) => this.store.dispatch(new SetLocations(locations.data)))
       });
+    this.router.navigate(['/locations']);
   }
 }
