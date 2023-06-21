@@ -37,6 +37,11 @@ export class LocationsState {
   }
 
   @Selector()
+  static getLocationsCount(state: LocationsStateModel) {
+    return state.fetchedLocations.length;
+  }
+
+  @Selector()
   static getSelectedLocation(state: LocationsStateModel) {
     return state.selectedLocation;
   }

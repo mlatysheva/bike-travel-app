@@ -15,26 +15,9 @@ export class LocationPhotosComponent {
   sliderConfig = {
     slidesToShow: 1,
     slidesToScroll: this.locationPhotos$.subscribe((photos) => photos.length > 4 ? 4 : photos.length),
-    autoplay: true,
-    autoplaySpeed: 2000,
+    autoplay: false,
     dots: true,
     infinite: false,
-  }
-
-  slickInit(e: any) {
-    console.log('slick initialized');
-  }
-
-  breakpoint(e: any) {
-    console.log('breakpoint');
-  }
-
-  afterChange(e: any) {
-    console.log('afterChange');
-  }
-
-  beforeChange(e: any) {
-    console.log('beforeChange');
   }
 }
 
