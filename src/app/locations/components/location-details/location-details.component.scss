@@ -1,5 +1,6 @@
 .location-details {
   height: max-content;
+  color: white;
 }
 
 .details-wrapper {
@@ -11,6 +12,11 @@
 .details-field {
   display: flex;
   flex-direction: row;
+}
+
+.details-field a {
+  color: var(--secondary-color);
+  text-decoration: none;
 }
 
 .left-subfield {

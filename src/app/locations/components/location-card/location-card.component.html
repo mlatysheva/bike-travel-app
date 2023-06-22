@@ -5,7 +5,7 @@
     </div>
     <mat-card-title>{{ location.name }}</mat-card-title>
     <mat-card-subtitle
-      >{{ location.address_obj.city }},
+    >{{ location.address_obj.city }},
       {{ location.address_obj.country }}</mat-card-subtitle
     >
   </mat-card-header>
@@ -15,6 +15,7 @@
   <mat-card-actions>
     <button
       class="action-btn"
+      color="primary"
       mat-button
       (click)="renderLocationDetails(location.location_id)"
     >

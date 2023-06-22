@@ -15,3 +15,16 @@
   display: flex;
   gap: 0.5rem;
 }
+
+.left-section, .label {
+  color: var(--light-grey);
+}
+
+.link a {
+  color: var(--secondary-color);
+  text-decoration: none;
+
+  &:hover {
+    color: var(--secondary-color);
+  }
+}
