@@ -2,8 +2,6 @@
   width: 100%;
   max-width: 1200px;
   margin: 1rem auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
   flex: 1;
 }
 
@@ -17,8 +15,8 @@
   background-image: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
-    ),
-    url("../../../../assets/images/manarola.jpg");
+  ),
+  url("../../../../assets/images/manarola.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

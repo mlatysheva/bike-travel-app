@@ -1,22 +1,23 @@
 @use "@angular/material" as mat;
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+
 @include mat.core();
 
-$darkblue-palette: (
-  50: #b8cff7,
-  100: #7495d0,
-  200: #94b3e8,
-  300: #406ab2,
-  400: #295298,
-  500: #11397e,
-  600: #183465,
-  700: #071c42,
-  800: #0c192f,
-  900: #0d1524,
-  A100: #94b3e8,
-  A200: #406ab2,
-  A400: #11397e,
-  A700: #071c42,
+$esentri-palette: (
+  50: #99cc33,
+  100: #99cc33,
+  200: #99cc33,
+  300: #99cc33,
+  400: #99cc33,
+  500: #99cc33,
+  600: #99cc33,
+  700: #99cc33,
+  800: #99cc33,
+  900: #99cc33,
+  A100: #fff,
+  A200: #fff,
+  A400: #fff,
+  A700: #fff,
   contrast: (
     50: rgba(black, 0.87),
     100: rgba(black, 0.87),
@@ -35,41 +36,62 @@ $darkblue-palette: (
   ),
 );
 
-$where_client-primary: mat.define-palette($darkblue-palette, 500);
-$where_client-accent: mat.define-palette($darkblue-palette, A400, A200, A700);
+$where_client-primary: mat.define-palette($esentri-palette, 500);
+$where_client-accent: mat.define-palette($esentri-palette, A400, A200, A700);
 $where_client-warn: mat.define-palette(mat.$red-palette);
-$custom-success: mat.define-palette($darkblue-palette);
+$custom-success: mat.define-palette($esentri-palette);
 $custom-danger: mat.define-palette(mat.$indigo-palette);
 
 $where_client-theme: mat.define-light-theme(
-  (
-    color: (
-      primary: $where_client-primary,
-      accent: $where_client-accent,
-      warn: $where_client-warn,
-    ),
-  )
+    (
+      color: (
+        primary: $where_client-primary,
+        accent: $where_client-accent,
+        warn: $where_client-warn,
+      ),
+    )
 );
 
 @include mat.all-component-themes($where_client-theme);
 
 .mat-success {
-  background-color: mat.get-color-from-palette($custom-success, 500);
-  color: mat.get-color-from-palette($custom-success, 500-contrast);
+  background-color: var(--secondary-color);
+  color: white;
 }
 
 .mat-danger {
   background-color: mat.get-color-from-palette($custom-danger, 500);
-  color: mat.get-color-from-palette($custom-danger, 500-contrast);
+  color: mat.get-color-from-palette($custom-danger, 500 -contrast);
+}
+
+.mat-button.mat-success,
+.mat-stroked-button.mat-success {
+  color: white;
+}
+
+.mat-button.mat-success:hover,
+.mat-stroked-button.mat-success:hover {
+  background-color: var(--secondary-color);
+}
+
+.mat-raised-button.mat-success,
+.mat-flat-button.mat-success,
+.mat-fab.mat-success,
+.mat-mini-fab.mat-success {
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+.mat-icon-button.mat-success {
+  color: white;
 }
 
 :root {
-  --light-grey: #e5e5e5;
-  --dark-grey: #49454f;
-  --primary-color: #0c2457;
-  --link-hover-color: #4570c1;
-  --secondary-color: rgb(255, 217, 0);
-  --options-color: rgb(173, 173, 173);
+  --light-grey: #e0e0e0;
+  --grey: #969696;
+  --dark-grey: #333;
+  --primary-color: #5c5c5c;
+  --secondary-color: #99cc33;
 
   // sizes
   --header-height: 90px;
@@ -79,12 +101,12 @@ $where_client-theme: mat.define-light-theme(
 }
 
 body {
-  font-family: Roboto, "Helvetica Neue", sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
   width: 100%;
   height: 100%;
   min-height: 100vh;
   margin: 0;
-  color: var(--dark-grey);
+  background-color: var(--dark-grey);
   box-sizing: inherit;
   overflow-y: scroll;
   display: flex;
@@ -107,12 +129,8 @@ app-root {
 
 app-header {
   height: var(--header-height);
-  background-color: rgba(116, 118, 122, 0.4);
+  background-color: rgba(51, 51, 51, 1);
   z-index: 100;
-
-  &.bg-solid {
-    background-color: #fff;
-  }
 }
 
 app-main-page,
@@ -130,7 +148,7 @@ app-footer {
   height: var(--footer-height);
   margin-top: auto;
   flex-shrink: 0;
-  background-color: rgba(116, 118, 122, 0.4);
+  background-color: rgba(51, 51, 51, 1);
   z-index: 100;
 }
 
