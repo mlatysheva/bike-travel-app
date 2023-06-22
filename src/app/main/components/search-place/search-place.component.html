@@ -1,7 +1,12 @@
 <div class="search-container">
-    <div class="label">Nach einem Ort suchen:</div>
-    <mat-form-field appearance="fill" class="input-field">
-      <input type="search" matInput placeholder="Manarola..." [(ngModel)]="searchQuery">
-      <mat-icon matSuffix (click)="onSearch()">search</mat-icon>
-    </mat-form-field>
+  <div class="label">Nach einem Ort suchen:</div>
+  <mat-form-field appearance="fill" class="input-field">
+    <input
+      type="search"
+      matInput
+      placeholder="Manarola..."
+      [(ngModel)]="searchQuery"
+    />
+    <mat-icon matSuffix (click)="onSearch()">search</mat-icon>
+  </mat-form-field>
 </div>

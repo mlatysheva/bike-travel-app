@@ -1,4 +1,4 @@
-import {ILocation, ILocationData} from "../../models/location.model";
+import { ILocation, ILocationData } from '../../models/location.model';
 
 export class SetLocations {
   static readonly type = '[Search] Set locations';

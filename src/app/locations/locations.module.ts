@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
-import { SharedModule} from "../shared/shared.module";
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 import { LocationsPageComponent } from './pages/locations-page/locations-page.component';
-import {RouterModule, Routes} from "@angular/router";
+import { RouterModule, Routes } from '@angular/router';
 import { LocationsListComponent } from './components/locations-list/locations-list.component';
 import { LocationCardComponent } from './components/location-card/location-card.component';
 import { SelectedLocationPageComponent } from './pages/selected-location-page/selected-location-page.component';
@@ -13,13 +13,13 @@ import { LocationReviewsComponent } from './components/location-reviews/location
 const routes: Routes = [
   {
     path: '',
-    component: LocationsPageComponent
+    component: LocationsPageComponent,
   },
   {
     path: ':id',
-    component: SelectedLocationPageComponent
-  }
-]
+    component: SelectedLocationPageComponent,
+  },
+];
 
 @NgModule({
   declarations: [
@@ -29,16 +29,14 @@ const routes: Routes = [
     SelectedLocationPageComponent,
     LocationDetailsComponent,
     LocationPhotosComponent,
-    LocationReviewsComponent
+    LocationReviewsComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
-    NgOptimizedImage
+    NgOptimizedImage,
   ],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class LocationsModule { }
+export class LocationsModule {}

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Select } from "@ngxs/store";
-import { LocationsState } from "../../../store/slices/locations.slice";
-import { Observable } from "rxjs";
+import { Select } from '@ngxs/store';
+import { LocationsState } from '../../../store/slices/locations.slice';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -9,8 +9,10 @@ import { Observable } from "rxjs";
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent {
-  @Select(LocationsState.getLocationsCount) locationsCount$!: Observable<number | 0 >;
+  @Select(LocationsState.getLocationsCount) locationsCount$!: Observable<
+    number | 0
+  >;
 
-  @Select(LocationsState.getSelectedLocationId) selectedLocationId$!: Observable<number | null>;
-  constructor( ) {}
+  @Select(LocationsState.getSelectedLocationId)
+  selectedLocationId$!: Observable<number | null>;
 }

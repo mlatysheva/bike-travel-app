@@ -16,6 +16,11 @@ import { SharedModule } from '../shared/shared.module';
     ProgressBarComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule, SharedModule],
-  exports: [HeaderComponent, FooterComponent, ProgressBarComponent, MenuComponent],
+  exports: [
+    HeaderComponent,
+    FooterComponent,
+    ProgressBarComponent,
+    MenuComponent,
+  ],
 })
-export class CoreModule { }
+export class CoreModule {}

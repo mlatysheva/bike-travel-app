@@ -4,12 +4,21 @@
       <mat-icon>place</mat-icon>
     </div>
     <mat-card-title>{{ location.name }}</mat-card-title>
-    <mat-card-subtitle>{{ location.address_obj.city }}, {{ location.address_obj.country }}</mat-card-subtitle>
+    <mat-card-subtitle
+      >{{ location.address_obj.city }},
+      {{ location.address_obj.country }}</mat-card-subtitle
+    >
   </mat-card-header>
   <mat-card-content>
     <p>{{ location.address_obj.address_string }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button class="action-btn" mat-button (click)="renderLocationDetails(location.location_id)">Details...</button>
+    <button
+      class="action-btn"
+      mat-button
+      (click)="renderLocationDetails(location.location_id)"
+    >
+      Details...
+    </button>
   </mat-card-actions>
 </mat-card>

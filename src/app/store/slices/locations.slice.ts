@@ -1,8 +1,11 @@
-import { State, Action, StateContext } from "@ngxs/store";
-import { LocationsStateModel } from "../state.model";
-import {SetLocations, SetSelectedLocation} from "../actions/locations.actions";
-import { Injectable } from "@angular/core";
-import { Selector } from "@ngxs/store";
+import { State, Action, StateContext } from '@ngxs/store';
+import { LocationsStateModel } from '../state.model';
+import {
+  SetLocations,
+  SetSelectedLocation,
+} from '../actions/locations.actions';
+import { Injectable } from '@angular/core';
+import { Selector } from '@ngxs/store';
 
 @Injectable()
 @State<LocationsStateModel>({
@@ -10,7 +13,7 @@ import { Selector } from "@ngxs/store";
   defaults: {
     fetchedLocations: [],
     selectedLocation: null,
-  }
+  },
 })
 export class LocationsState {
   @Action(SetLocations)
@@ -18,16 +21,19 @@ export class LocationsState {
     const state = ctx.getState();
     ctx.setState({
       ...state,
-      fetchedLocations: action.locations
+      fetchedLocations: action.locations,
     });
   }
 
   @Action(SetSelectedLocation)
-  setSelectedLocation(ctx: StateContext<LocationsStateModel>, action: SetSelectedLocation) {
+  setSelectedLocation(
+    ctx: StateContext<LocationsStateModel>,
+    action: SetSelectedLocation
+  ) {
     const state = ctx.getState();
     ctx.setState({
       ...state,
-      selectedLocation: action.location
+      selectedLocation: action.location,
     });
   }
 
