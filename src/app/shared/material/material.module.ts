@@ -12,9 +12,8 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatTooltipModule } from "@angular/material/tooltip";
-import { MatToolbarModule } from "@angular/material/toolbar";
-
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const MaterialComponents = [
   MatRadioModule,
@@ -38,4 +37,4 @@ const MaterialComponents = [
   imports: [MaterialComponents],
   exports: [MaterialComponents],
 })
-export class MaterialModule { }
+export class MaterialModule {}

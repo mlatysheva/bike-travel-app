@@ -8,7 +8,9 @@
         <div class="left-subfield">Address</div>
         <div class="right-subfield">
           <p class="small-text">{{ locationDetails.address_obj?.country }}</p>
-          <p class="small-text">{{ locationDetails.address_obj?.postalcode }}</p>
+          <p class="small-text">
+            {{ locationDetails.address_obj?.postalcode }}
+          </p>
           <p class="small-text">{{ locationDetails.address_obj?.state }}</p>
           <p class="small-text">{{ locationDetails.address_obj?.city }}</p>
           <p class="small-text">{{ locationDetails.address_obj?.street1 }}</p>
@@ -23,9 +25,14 @@
       </div>
       <div class="details-field" *ngIf="locationDetails.web_url">
         <div class="left-subfield">Website</div>
-        <a class="right-subfield" target="_blank" [href]="locationDetails.web_url">
+        <a
+          class="right-subfield"
+          target="_blank"
+          [href]="locationDetails.web_url"
+        >
           {{ locationDetails.web_url }}
         </a>
       </div>
     </div>
+  </div>
 </div>

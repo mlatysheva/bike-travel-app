@@ -1,21 +1,24 @@
 import { Component } from '@angular/core';
-import {Select} from "@ngxs/store";
-import {LocationsState} from "../../../store/slices/locations.slice";
-import {IReview} from "../../../models/reviews.model";
-import {Observable} from "rxjs";
+import { Select } from '@ngxs/store';
+import { LocationsState } from '../../../store/slices/locations.slice';
+import { IReview } from '../../../models/reviews.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-location-reviews',
   templateUrl: './location-reviews.component.html',
-  styleUrls: ['./location-reviews.component.scss']
+  styleUrls: ['./location-reviews.component.scss'],
 })
 export class LocationReviewsComponent {
-  @Select(LocationsState.getSelectedLocationReviews) locationReviews$!: Observable<IReview[]>;
+  @Select(LocationsState.getSelectedLocationReviews)
+  locationReviews$!: Observable<IReview[]>;
 
-  @Select(LocationsState.getSelecteLocationRatingImage) ratingImageUrl$!: Observable<string>;
+  @Select(LocationsState.getSelecteLocationRatingImage)
+  ratingImageUrl$!: Observable<string>;
 
   constructor() {
-    this.ratingImageUrl$.subscribe((source) => {})
+    this.ratingImageUrl$.subscribe((source) => {
+      console.log(source);
+    });
   }
-
 }
