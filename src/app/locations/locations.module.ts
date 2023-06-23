@@ -9,6 +9,7 @@ import { SelectedLocationPageComponent } from './pages/selected-location-page/se
 import { LocationDetailsComponent } from './components/location-details/location-details.component';
 import { LocationPhotosComponent } from './components/location-photos/location-photos.component';
 import { LocationReviewsComponent } from './components/location-reviews/location-reviews.component';
+import { SearchBikeBtnComponent } from './components/search-bike-btn/search-bike-btn.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,7 @@ const routes: Routes = [
     LocationDetailsComponent,
     LocationPhotosComponent,
     LocationReviewsComponent,
+    SearchBikeBtnComponent,
   ],
   imports: [
     CommonModule,

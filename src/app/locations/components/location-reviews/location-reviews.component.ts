@@ -17,8 +17,8 @@ export class LocationReviewsComponent {
   ratingImageUrl$!: Observable<string>;
 
   constructor() {
-    this.ratingImageUrl$.subscribe((source) => {
-      console.log(source);
-    });
+    // this.ratingImageUrl$.subscribe((source) => {
+    //   console.log(source);
+    // });
   }
 }

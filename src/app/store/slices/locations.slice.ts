@@ -73,7 +73,17 @@ export class LocationsState {
   }
 
   @Selector()
-  static getSelecteLocationRatingImage(state: LocationsStateModel) {
+  static getSelectedLocationRatingImage(state: LocationsStateModel) {
     return state.selectedLocation?.details.rating_image_url;
+  }
+
+  @Selector()
+  static getSelectedLocationLongitute(state: LocationsStateModel) {
+    return state.selectedLocation?.details.longitude;
+  }
+
+  @Selector()
+  static getSelectedLocationLatitude(state: LocationsStateModel) {
+    return state.selectedLocation?.details.latitude;
   }
 }
