@@ -8,6 +8,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { NgxsModule } from "@ngxs/store";
 import { BikesState } from "../store/slices/bikes.slice";
 import { SelectedBikePageComponent } from './pages/selected-bike-page/selected-bike-page.component';
+import { DatePipe } from "@angular/common";
 
 const routes: Routes = [
   {
@@ -32,6 +33,9 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     NgxsModule.forFeature([BikesState]),
+  ],
+  providers: [
+    DatePipe,
   ],
   exports: [RouterModule],
 })
