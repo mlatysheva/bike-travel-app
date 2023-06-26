@@ -78,7 +78,7 @@ export class LocationsState {
   }
 
   @Selector()
-  static getSelectedLocationLongitute(state: LocationsStateModel) {
+  static getSelectedLocationLongitude(state: LocationsStateModel) {
     return state.selectedLocation?.details.longitude;
   }
 
