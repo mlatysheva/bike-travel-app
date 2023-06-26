@@ -13,13 +13,8 @@ export class GoogleMapComponent implements OnInit {
 
   @Select(LocationsState.getSelectedLocationLongitude) longitude$!: Observable<number | 0>;
 
-  currentLocation = navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position);
-    return position;
-  });
-
-  latitude: number = 0;
-  longitude: number = 0;
+  latitude: number = 52.55;
+  longitude: number = 13.45;
 
   zoom = 12;
   center: google.maps.LatLngLiteral = {lat: this.latitude, lng: this.longitude};

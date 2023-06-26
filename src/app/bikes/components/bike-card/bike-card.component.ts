@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { Store } from '@ngxs/store';
 import { IBike } from "../../../models/bike.model";
 import { Router } from "@angular/router";
+import { Store } from "@ngxs/store";
+import { SetSelectedBike } from "../../../store/actions/bikes.actions";
 
 @Component({
   selector: 'app-bike-card',
@@ -11,10 +12,16 @@ import { Router } from "@angular/router";
 export class BikeCardComponent {
   @Input() bike?: IBike;
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private store: Store,
+  ) {
   }
 
   renderBikeDetails(id: number): void {
+    if (this.bike) {
+      this.store.dispatch(new SetSelectedBike(this.bike));
+    }
     this.router.navigate([`/bikes/${id}`]);
   }
 }

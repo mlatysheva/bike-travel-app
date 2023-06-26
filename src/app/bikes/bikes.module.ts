@@ -7,19 +7,25 @@ import { BikeCardComponent } from './components/bike-card/bike-card.component';
 import { RouterModule, Routes } from "@angular/router";
 import { NgxsModule } from "@ngxs/store";
 import { BikesState } from "../store/slices/bikes.slice";
+import { SelectedBikePageComponent } from './pages/selected-bike-page/selected-bike-page.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchBikePageComponent,
   },
+  {
+    path: ':id',
+    component: SelectedBikePageComponent,
+  }
 ];
 
 @NgModule({
   declarations: [
     SearchBikePageComponent,
     BikesListComponent,
-    BikeCardComponent
+    BikeCardComponent,
+    SelectedBikePageComponent
   ],
   imports: [
     CommonModule,

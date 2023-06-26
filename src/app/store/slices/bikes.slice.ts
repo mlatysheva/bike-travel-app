@@ -57,4 +57,9 @@ export class BikesState {
     return state.selectedBike?.id;
   }
 
+  @Selector()
+  static getBikeById(state: BikesStateModel) {
+    return (id: number) =>
+      state.stolenBikes.find((bike) => bike.id === id);
+  }
 }

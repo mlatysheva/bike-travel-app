@@ -19,6 +19,7 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     MaterialModule,
     SlickCarouselModule,
     ReviewCardComponent,
+    GoogleMapComponent,
   ],
 })
 export class SharedModule {}
