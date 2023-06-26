@@ -11,15 +11,13 @@ import { BikesState } from "../../../store/slices/bikes.slice";
 })
 export class SelectedBikePageComponent implements OnInit {
   @Select(BikesState.getSelectedBike) stolenBike$!: Observable<IBike | undefined>;
-
   @Select(BikesState.getStolenBikeLatitude) stolenBikeLatitude$!: Observable<number>;
-
   @Select(BikesState.getStolenBikeLongitude) stolenBikeLongitude$!: Observable<number>;
 
   selectedBike!: IBike;
   stolenBikeLatitude!: number;
   stolenBikeLongitude!: number;
-  
+
   ngOnInit() {
     this.stolenBikeLatitude$.subscribe((latitude) => {
       this.stolenBikeLatitude = latitude;

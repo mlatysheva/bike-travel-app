@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ILocationData } from '../../../models/location.model';
 import { Select } from '@ngxs/store';
@@ -9,7 +9,20 @@ import { LocationsState } from '../../../store/slices/locations.slice';
   templateUrl: './selected-location-page.component.html',
   styleUrls: ['./selected-location-page.component.scss'],
 })
-export class SelectedLocationPageComponent {
-  @Select(LocationsState.getSelectedLocation)
-  locationData$!: Observable<ILocationData>;
+export class SelectedLocationPageComponent implements OnInit {
+  // @Select(LocationsState.getSelectedLocation) locationData$!: Observable<ILocationData>;
+  @Select(LocationsState.getSelectedLocationLatitude) selectedLocationLatitude$!: Observable<number>;
+  @Select(LocationsState.getSelectedLocationLongitude) selectedLocationLongitude$!: Observable<number>;
+
+  selectedLocationLatitude!: number;
+  selectedLocationLongitude!: number;
+
+  ngOnInit() {
+    this.selectedLocationLatitude$.subscribe((latitude) => {
+      this.selectedLocationLatitude = latitude;
+    });
+    this.selectedLocationLongitude$.subscribe((longitude) => {
+      this.selectedLocationLongitude = longitude;
+    });
+  }
 }
