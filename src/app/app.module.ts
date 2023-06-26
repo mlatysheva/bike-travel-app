@@ -7,19 +7,21 @@ import { AppComponent } from './app.component';
 import { MainModule } from './main/main.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
+import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
 import { LocationsModule } from './locations/locations.module';
 import { BikesModule } from './bikes/bikes.module';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
+    NgxsModule.forRoot([]),
+    NgxsReduxDevtoolsPluginModule.forRoot(),
+    NgxsStoragePluginModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     CoreModule,
     MainModule,
-    NgxsModule.forRoot([]),
-    NgxsReduxDevtoolsPluginModule.forRoot(),
     LocationsModule,
     BikesModule,
   ],
