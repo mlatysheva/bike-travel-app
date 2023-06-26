@@ -9,6 +9,7 @@ import { NgxsModule } from "@ngxs/store";
 import { BikesState } from "../store/slices/bikes.slice";
 import { SelectedBikePageComponent } from './pages/selected-bike-page/selected-bike-page.component';
 import { DatePipe } from "@angular/common";
+import { BikeDetailsComponent } from './components/bike-details/bike-details.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     SearchBikePageComponent,
     BikesListComponent,
     BikeCardComponent,
-    SelectedBikePageComponent
+    SelectedBikePageComponent,
+    BikeDetailsComponent
   ],
   imports: [
     CommonModule,
