@@ -6,7 +6,6 @@ import {
 } from '../actions/bikes.actions';
 import { Injectable } from '@angular/core';
 import { Selector } from '@ngxs/store';
-import { IBike } from "../../models/bike.model";
 
 @Injectable()
 @State<BikesStateModel>({

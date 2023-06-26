@@ -1,7 +1,4 @@
 import { Component } from '@angular/core';
-import { concat, concatMap, merge, of } from 'rxjs';
-import { mergeMap } from 'rxjs/operators';
-import { OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',

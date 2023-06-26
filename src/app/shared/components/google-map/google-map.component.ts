@@ -28,7 +28,5 @@ export class GoogleMapComponent implements OnInit {
       lat: parseFloat(this.latitudeInput.toString()),
       lng: parseFloat(this.longitudeInput.toString())
     };
-    console.log('this.latitudeInput', this.latitudeInput);
-    console.log(this.center);
   }
 }

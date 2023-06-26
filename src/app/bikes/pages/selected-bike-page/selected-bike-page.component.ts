@@ -21,13 +21,9 @@ export class SelectedBikePageComponent implements OnInit {
   ngOnInit() {
     this.stolenBikeLatitude$.subscribe((latitude) => {
       this.stolenBikeLatitude = latitude;
-      console.log('latitude', latitude);
-      console.log(typeof latitude);
     });
     this.stolenBikeLongitude$.subscribe((longitude) => {
       this.stolenBikeLongitude = longitude;
-      console.log('longitude', longitude);
-      console.log(typeof longitude);
     });
   }
 }

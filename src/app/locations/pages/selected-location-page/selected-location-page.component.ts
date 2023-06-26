@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ILocationData } from '../../../models/location.model';
 import { Select } from '@ngxs/store';
 import { LocationsState } from '../../../store/slices/locations.slice';
 
@@ -10,7 +9,6 @@ import { LocationsState } from '../../../store/slices/locations.slice';
   styleUrls: ['./selected-location-page.component.scss'],
 })
 export class SelectedLocationPageComponent implements OnInit {
-  // @Select(LocationsState.getSelectedLocation) locationData$!: Observable<ILocationData>;
   @Select(LocationsState.getSelectedLocationLatitude) selectedLocationLatitude$!: Observable<number>;
   @Select(LocationsState.getSelectedLocationLongitude) selectedLocationLongitude$!: Observable<number>;
 
