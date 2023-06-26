@@ -1,8 +1,6 @@
 <mat-card *ngIf="bike" class="bike-card">
   <mat-card-header>
-    <div mat-card-avatar class="bike-icon">
-      <mat-icon>place</mat-icon>
-    </div>
+    <img mat-card-avatar [src]="bike.thumb" alt="Bike"/>
     <mat-card-title>{{ bike.title }}</mat-card-title>
     <mat-card-subtitle
     >{{ bike.description }}</mat-card-subtitle

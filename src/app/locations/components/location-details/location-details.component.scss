@@ -3,6 +3,12 @@
   color: white;
 }
 
+.top-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .details-wrapper {
   display: flex;
   flex-direction: column;

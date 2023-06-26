@@ -13,7 +13,7 @@ export class LocationReviewsComponent {
   @Select(LocationsState.getSelectedLocationReviews)
   locationReviews$!: Observable<IReview[]>;
 
-  @Select(LocationsState.getSelecteLocationRatingImage)
+  @Select(LocationsState.getSelectedLocationRatingImage)
   ratingImageUrl$!: Observable<string>;
 
   constructor() {

@@ -1,6 +1,9 @@
 <div class="location-details">
   <div *ngIf="locationDetails$ | async as locationDetails">
-    <h2>{{ locationDetails.name }}</h2>
+    <div class="top-wrapper">
+      <h2>{{ locationDetails.name }}</h2>
+      <app-search-bike-btn></app-search-bike-btn>
+    </div>
     <app-location-photos></app-location-photos>
     <p *ngIf="locationDetails.description">{{ locationDetails.description }}</p>
     <div class="details-wrapper">

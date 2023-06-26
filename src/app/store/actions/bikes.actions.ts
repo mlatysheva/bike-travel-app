@@ -1,7 +1,7 @@
 import { IBike } from '../../models/bike.model';
 
 export class SetBikes {
-  static readonly type = '[Selected Location] Set Bikes';
+  static readonly type = '[Search Bike Button] Set Bikes';
 
   constructor(public bikes: IBike[]) {
   }

@@ -5,6 +5,8 @@ import { SearchBikePageComponent } from './pages/search-bike-page/search-bike-pa
 import { BikesListComponent } from './components/bikes-list/bikes-list.component';
 import { BikeCardComponent } from './components/bike-card/bike-card.component';
 import { RouterModule, Routes } from "@angular/router";
+import { NgxsModule } from "@ngxs/store";
+import { BikesState } from "../store/slices/bikes.slice";
 
 const routes: Routes = [
   {
@@ -23,6 +25,7 @@ const routes: Routes = [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
+    NgxsModule.forFeature([BikesState]),
   ],
   exports: [RouterModule],
 })
