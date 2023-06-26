@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
-import { Select } from "@ngxs/store";
-import { LocationsState } from "../../../store/slices/locations.slice";
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-google-map',
@@ -9,15 +6,14 @@ import { LocationsState } from "../../../store/slices/locations.slice";
   styleUrls: ['./google-map.component.scss']
 })
 export class GoogleMapComponent implements OnInit {
-  @Select(LocationsState.getSelectedLocationLatitude) latitude$!: Observable<number | 0>;
-
-  @Select(LocationsState.getSelectedLocationLongitude) longitude$!: Observable<number | 0>;
-
-  latitude: number = 52.55;
-  longitude: number = 13.45;
+  @Input() latitudeInput!: number;
+  @Input() longitudeInput!: number;
 
   zoom = 12;
-  center: google.maps.LatLngLiteral = {lat: this.latitude, lng: this.longitude};
+  center = {
+    lat: this.latitudeInput,
+    lng: this.longitudeInput,
+  };
   options: google.maps.MapOptions = {
     mapTypeId: 'hybrid',
     zoomControl: false,
@@ -25,19 +21,14 @@ export class GoogleMapComponent implements OnInit {
     disableDoubleClickZoom: true,
     maxZoom: 15,
     minZoom: 8,
-    // center: {lat: 37.7749, lng: -122.4194},
   };
 
-  constructor() {
-    this.latitude$.subscribe((latitude) => {
-      this.latitude = latitude;
-    });
-    this.longitude$.subscribe((longitude) => {
-      this.longitude = longitude;
-    });
-  }
-
   ngOnInit() {
-    this.options.center = {lat: this.latitude, lng: this.longitude};
+    this.center = {
+      lat: parseFloat(this.latitudeInput.toString()),
+      lng: parseFloat(this.longitudeInput.toString())
+    };
+    console.log('this.latitudeInput', this.latitudeInput);
+    console.log(this.center);
   }
 }

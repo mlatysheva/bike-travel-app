@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { IBike } from "../../../models/bike.model";
 import { Select } from "@ngxs/store";
@@ -9,7 +9,27 @@ import { BikesState } from "../../../store/slices/bikes.slice";
   templateUrl: './selected-bike-page.component.html',
   styleUrls: ['./selected-bike-page.component.scss']
 })
-export class SelectedBikePageComponent {
-  @Select(BikesState.getSelectedBike) selectedBike$!: Observable<IBike | undefined>;
+export class SelectedBikePageComponent implements OnInit {
+  @Select(BikesState.getSelectedBike) stolenBike$!: Observable<IBike | undefined>;
 
+  @Select(BikesState.getStolenBikeLatitude) stolenBikeLatitude$!: Observable<number>;
+
+  @Select(BikesState.getStolenBikeLongitude) stolenBikeLongitude$!: Observable<number>;
+
+  selectedBike!: IBike;
+  stolenBikeLatitude!: number;
+  stolenBikeLongitude!: number;
+  
+  ngOnInit() {
+    this.stolenBikeLatitude$.subscribe((latitude) => {
+      this.stolenBikeLatitude = latitude;
+      console.log('latitude', latitude);
+      console.log(typeof latitude);
+    });
+    this.stolenBikeLongitude$.subscribe((longitude) => {
+      this.stolenBikeLongitude = longitude;
+      console.log('longitude', longitude);
+      console.log(typeof longitude);
+    });
+  }
 }

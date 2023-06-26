@@ -6,6 +6,7 @@ import {
 } from '../actions/bikes.actions';
 import { Injectable } from '@angular/core';
 import { Selector } from '@ngxs/store';
+import { IBike } from "../../models/bike.model";
 
 @Injectable()
 @State<BikesStateModel>({
@@ -61,5 +62,17 @@ export class BikesState {
   static getBikeById(state: BikesStateModel) {
     return (id: number) =>
       state.stolenBikes.find((bike) => bike.id === id);
+  }
+
+  @Selector()
+  static getStolenBikeLatitude(state: BikesStateModel) {
+    if (!state.selectedBike?.stolen_coordinates) return null;
+    return state.selectedBike?.stolen_coordinates[0];
+  }
+
+  @Selector()
+  static getStolenBikeLongitude(state: BikesStateModel) {
+    if (!state.selectedBike?.stolen_coordinates) return null;
+    return state.selectedBike?.stolen_coordinates[1];
   }
 }
