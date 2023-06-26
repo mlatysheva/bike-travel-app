@@ -13,12 +13,12 @@ export class LocationReviewsComponent {
   @Select(LocationsState.getSelectedLocationReviews)
   locationReviews$!: Observable<IReview[]>;
 
-  @Select(LocationsState.getSelecteLocationRatingImage)
+  @Select(LocationsState.getSelectedLocationRatingImage)
   ratingImageUrl$!: Observable<string>;
 
   constructor() {
-    this.ratingImageUrl$.subscribe((source) => {
-      console.log(source);
-    });
+    // this.ratingImageUrl$.subscribe((source) => {
+    //   console.log(source);
+    // });
   }
 }

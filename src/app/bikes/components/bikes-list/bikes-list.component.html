@@ -1,0 +1,5 @@
+<div class="list-wrapper" *ngIf="bikes$ | async as bikes">
+  <div *ngFor="let bike of bikes">
+    <app-bike-card [bike]="bike"></app-bike-card>
+  </div>
+</div>

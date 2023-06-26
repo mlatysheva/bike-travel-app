@@ -8,6 +8,7 @@ import { MainModule } from './main/main.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { LocationsModule } from './locations/locations.module';
+import { BikesModule } from './bikes/bikes.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { LocationsModule } from './locations/locations.module';
     NgxsModule.forRoot([]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     LocationsModule,
+    BikesModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
