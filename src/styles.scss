@@ -138,7 +138,9 @@ app-header {
 
 app-main-page,
 app-locations-page,
-app-selected-location-page {
+app-selected-location-page,
+app-selected-bike-page,
+app-search-bike-page {
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -163,7 +165,7 @@ app-footer {
 
 .slick-slider {
   width: 88%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 body .slick-prev,
@@ -173,4 +175,14 @@ body .slick-next {
   height: 45px;
   width: 40px;
   z-index: 100;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+}
+
+.white-text {
+  color: white;
 }

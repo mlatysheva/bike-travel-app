@@ -1,9 +1,11 @@
-<google-map
-  height="500px"
-  width="100%"
-  [zoom]="zoom"
-  [center]="center"
-  [options]="options"
->
-  <map-marker [position]="center"></map-marker>
-</google-map>
+<div class="map-wrapper">
+  <google-map
+    height="300px"
+    width="500px"
+    [zoom]="zoom"
+    [center]="center"
+    [options]="options"
+  >
+    <map-marker [position]="center"></map-marker>
+  </google-map>
+</div>

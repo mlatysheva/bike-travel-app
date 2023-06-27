@@ -1,6 +1,9 @@
-<app-bike-details></app-bike-details>
+<div class="page-wrapper selected-bike-page">
+  <h1 class="white-text" *ngIf="stolenBike$ | async as bike">{{ bike.title }}</h1>
+  <app-bike-details></app-bike-details>
 
-<app-google-map [latitudeInput]="stolenBikeLatitude"
-                [longitudeInput]="stolenBikeLongitude"
-></app-google-map>
+  <app-google-map [latitudeInput]="stolenBikeLatitude"
+                  [longitudeInput]="stolenBikeLongitude"
+  ></app-google-map>
+</div>
 

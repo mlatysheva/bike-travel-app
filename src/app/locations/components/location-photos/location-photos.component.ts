@@ -14,11 +14,12 @@ export class LocationPhotosComponent implements OnInit {
   locationPhotos$!: Observable<IPhoto[]>;
 
   sliderConfig = {
-    slidesToShow: 1,
+    slidesToShow: 2,
     slidesToScroll: 1,
     autoplay: false,
     dots: true,
     infinite: true,
+    centerMode: true,
   };
 
   slickInit(e: { event: any; slick: any }) {
