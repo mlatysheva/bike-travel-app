@@ -15,7 +15,7 @@ export class GoogleMapComponent implements OnInit {
     lng: this.longitudeInput,
   };
   options: google.maps.MapOptions = {
-    mapTypeId: 'hybrid',
+    mapTypeId: 'roadmap',
     zoomControl: false,
     scrollwheel: false,
     disableDoubleClickZoom: true,

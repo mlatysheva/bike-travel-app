@@ -11,6 +11,7 @@ import { LocationPhotosComponent } from './components/location-photos/location-p
 import { LocationReviewsComponent } from './components/location-reviews/location-reviews.component';
 import { SearchBikeBtnComponent } from './components/search-bike-btn/search-bike-btn.component';
 import { GoogleMapsModule } from "@angular/google-maps";
+import { environment } from "../../environments/environment";
 
 const routes: Routes = [
   {
@@ -41,6 +42,10 @@ const routes: Routes = [
     NgOptimizedImage,
     GoogleMapsModule,
   ],
+  providers: [
+    { provide: 'googleMapsApiKey', useValue: environment.googleMapsApiKey }
+  ],
   exports: [RouterModule],
 })
-export class LocationsModule {}
+export class LocationsModule {
+}

@@ -5,6 +5,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
 import { ReviewCardComponent } from './components/review-card/review-card.component';
 import { GoogleMapsModule } from "@angular/google-maps";
 import { GoogleMapComponent } from './components/google-map/google-map.component';
+import { environment } from "../../environments/environment";
 
 @NgModule({
   declarations: [ReviewCardComponent, GoogleMapComponent],
@@ -14,6 +15,9 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     SlickCarouselModule,
     GoogleMapsModule,
   ],
+  providers: [
+    { provide: 'googleMapsApiKey', useValue: environment.googleMapsApiKey }
+  ],
   exports: [
     CommonModule,
     MaterialModule,
@@ -22,4 +26,5 @@ import { GoogleMapComponent } from './components/google-map/google-map.component
     GoogleMapComponent,
   ],
 })
-export class SharedModule {}
+export class SharedModule {
+}
