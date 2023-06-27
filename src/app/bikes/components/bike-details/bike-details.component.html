@@ -1,8 +1,6 @@
 <mat-card *ngIf="selectedBike$ | async as bike" class="details">
-  <mat-card-header>
-    <img mat-card-avatar [src]="bike.thumb" alt="Bike"/>
-    <mat-card-title>{{ bike.title }}</mat-card-title>
-  </mat-card-header>
+  <div class="image" [ngStyle]="{'background-image': 'url(' + bike.large_img + ')'}"></div>
+
   <mat-card-content>
     <p>{{ bike.description }}</p>
     <p>Gestolen am: {{ bikeDate }}</p>

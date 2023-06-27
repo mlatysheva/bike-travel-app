@@ -1,3 +1,10 @@
 .selected-bike-page {
   padding-left: 1rem;
 }
+
+.details-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}

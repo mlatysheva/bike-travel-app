@@ -144,9 +144,6 @@ app-search-bike-page {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  overflow-y: scroll;
 }
 
 app-footer {
@@ -170,17 +167,26 @@ app-footer {
 
 body .slick-prev,
 body .slick-next {
-  //height: 100%;
-  //width: 100%;
   height: 45px;
   width: 40px;
   z-index: 100;
+}
+
+body .slick-prev {
+  left: -5rem;
+}
+
+body .slick-next {
+  right: -5rem;
 }
 
 .page-wrapper {
   width: 100%;
   max-width: var(--max-content-width);
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .white-text {
