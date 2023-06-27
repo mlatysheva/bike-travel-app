@@ -1,7 +1,7 @@
 <mat-card *ngIf="review" class="review-cart">
   <mat-card-header>
-    <div mat-card-avatar class="user-icon">
-      <mat-icon>user</mat-icon>
+    <div mat-card-avatar class="user-icon" *ngIf="review.user?.avatar?.thumbnail">
+      <img [src]="review.user?.avatar?.thumbnail" alt="Avatar">
     </div>
     <mat-card-title>{{ review.title }}</mat-card-title>
     <mat-card-subtitle>{{ review.published_date }}</mat-card-subtitle>

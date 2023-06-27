@@ -1,3 +1,5 @@
+import { IUser } from "./user.model";
+
 export interface IReview {
   id: number;
   lang?: string;
@@ -13,7 +15,7 @@ export interface IReview {
   title?: string;
   owner_response?: string;
   is_machine_translated?: boolean;
-  user?: any;
+  user?: IUser;
   subratings?: any;
 }
 

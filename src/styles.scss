@@ -102,7 +102,6 @@ $where_client-theme: mat.define-light-theme(
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
-  line-height: 150%;
   font-weight: 300;
   letter-spacing: 0.05rem;
   width: 100%;
@@ -121,6 +120,10 @@ h2,
 h3 {
   font-family: Ubuntu, "Helvetica Neue", sans-serif;
   font-weight: 400;
+}
+
+p {
+  line-height: 150%;
 }
 
 app-root {
@@ -157,7 +160,7 @@ app-footer {
 .slick-wrapper {
   width: 100%;
   margin: 1rem auto;
-  overflow-y: hidden;
+  //overflow-y: hidden;
 }
 
 .slick-slider {
@@ -187,8 +190,21 @@ body .slick-next {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .white-text {
   color: white;
+}
+
+.action-btn {
+  height: 60px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
 }
