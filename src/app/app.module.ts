@@ -11,6 +11,7 @@ import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
 import { LocationsModule } from './locations/locations.module';
 import { BikesModule } from './bikes/bikes.module';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [AppComponent],
@@ -31,6 +32,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    RouterModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

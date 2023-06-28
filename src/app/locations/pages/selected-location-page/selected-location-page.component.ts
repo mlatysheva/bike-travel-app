@@ -18,9 +18,11 @@ export class SelectedLocationPageComponent implements OnInit {
   ngOnInit() {
     this.selectedLocationLatitude$.subscribe((latitude) => {
       this.selectedLocationLatitude = latitude;
+      console.log('in selected location page latitude is: ', this.selectedLocationLatitude);
     });
     this.selectedLocationLongitude$.subscribe((longitude) => {
       this.selectedLocationLongitude = longitude;
+      console.log('in selected location page longitude is: ', this.selectedLocationLongitude);
     });
   }
 }

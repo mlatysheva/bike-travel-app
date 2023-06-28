@@ -6,5 +6,7 @@
   <a *ngIf="selectedLocationId$ | async as place_id" mat-button routerLink="/locations/{{ place_id }}"
   >Mein Ort</a>
   <a *ngIf="bikesCount$ | async" mat-button routerLink="/bikes">Fahrräder</a>
-  <a *ngIf="selectedBikeId$ | async as bike_id" mat-button routerLink="/bikes/{{ bike_id }}">Mein Rad</a>
+  <div *ngIf="bikesCount$ | async">
+    <a *ngIf="selectedBikeId$ | async as bike_id" mat-button routerLink="/bikes/{{ bike_id }}">Mein Rad</a>
+  </div>
 </div>
