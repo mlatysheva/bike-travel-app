@@ -1,7 +1,12 @@
 <div class="page-wrapper">
   <app-location-details></app-location-details>
-  <app-google-map [latitudeInput]="selectedLocationLatitude"
-                  [longitudeInput]="selectedLocationLongitude">
-  </app-google-map>
+  <p class="white-text" *ngIf="loading">Loading Google Map...</p>
+  <div *ngIf="!loading">
+    <div *ngIf="latLong$ | async as latLong">
+      <app-google-map [latitudeInput]="latLong[0]"
+                      [longitudeInput]="latLong[1]">
+      </app-google-map>
+    </div>
+  </div>
   <app-location-reviews></app-location-reviews>
 </div>

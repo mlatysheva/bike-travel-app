@@ -14,7 +14,6 @@ export class SelectedBikePageComponent implements OnInit {
   @Select(BikesState.getStolenBikeLatitude) stolenBikeLatitude$!: Observable<number>;
   @Select(BikesState.getStolenBikeLongitude) stolenBikeLongitude$!: Observable<number>;
 
-  selectedBike!: IBike;
   stolenBikeLatitude!: number;
   stolenBikeLongitude!: number;
 
@@ -26,4 +25,5 @@ export class SelectedBikePageComponent implements OnInit {
       this.stolenBikeLongitude = longitude;
     });
   }
+
 }

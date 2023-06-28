@@ -10,10 +10,6 @@ export class GoogleMapComponent implements OnInit {
   @Input() longitudeInput!: number;
 
   zoom = 12;
-  // center = {
-  //   lat: this.latitudeInput,
-  //   lng: this.longitudeInput,
-  // };
   center!: google.maps.LatLngLiteral;
   options: google.maps.MapOptions = {
     mapTypeId: 'roadmap',
@@ -25,8 +21,6 @@ export class GoogleMapComponent implements OnInit {
   };
 
   ngOnInit() {
-    console.log(this.latitudeInput);
-    console.log(this.longitudeInput);
     this.center = {
       lat: parseFloat(this.latitudeInput.toString()),
       lng: parseFloat(this.longitudeInput.toString())
