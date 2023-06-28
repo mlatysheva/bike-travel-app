@@ -5,7 +5,7 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 @Component({
   selector: 'app-offline-snackbar',
   template: '',
-  styleUrls: ['./offline-snackbar.component.scss']
+  // styleUrls: ['./offline-snackbar.component.scss']
 })
 export class OfflineSnackbarComponent implements OnInit {
 
@@ -22,8 +22,8 @@ export class OfflineSnackbarComponent implements OnInit {
         if (!isOnline) {
           console.log('You are offline');
           this.snackBar.open('You are offline', 'Loading cached resources...', {
-            duration: 5000,
-            panelClass: 'offline-snackbar'
+            duration: 50000,
+            panelClass: ['offline-snackbar'],
           });
         }
       });

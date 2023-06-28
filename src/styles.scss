@@ -209,3 +209,27 @@ body .slick-next {
   background-color: var(--secondary-color);
 }
 
+//.offline-snackbar {
+//  margin: 0;
+//  width: var(--max-content-width);
+//  height: var(--footer-height);
+//  background-color: var(--secondary-color) !important;
+//  color: white;
+//}
+
+.mat-mdc-snack-bar-container, .cdk-overlay-pane {
+  background-color: var(--secondary-color) !important;
+  height: var(--footer-height);
+  width: 100%;
+  margin: 0 !important;
+  color: white;
+  box-shadow: none;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: var(--secondary-color) !important;
+  color: white;
+  box-shadow: none !important;
+}
+
+
