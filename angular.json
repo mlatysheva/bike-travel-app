@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/wheretogo/browser",
+            "outputPath": "dist/wheretogo",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -157,23 +157,6 @@
               "sourceMap": true,
               "extractLicenses": false,
               "vendorChunk": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "app-shell": {
-          "builder": "@angular-devkit/build-angular:app-shell",
-          "options": {
-            "route": "shell"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "wheretogo:build:production",
-              "serverTarget": "wheretogo:server:production"
-            },
-            "development": {
-              "browserTarget": "wheretogo:build:development",
-              "serverTarget": "wheretogo:server:development"
             }
           },
           "defaultConfiguration": "production"
