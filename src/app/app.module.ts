@@ -9,12 +9,14 @@ import { MainModule } from './main/main.module';
 import { NgxsModule } from '@ngxs/store';
 import { NgxsReduxDevtoolsPluginModule } from '@ngxs/devtools-plugin';
 import { NgxsStoragePluginModule } from "@ngxs/storage-plugin";
+import { NgxsFormPluginModule } from "@ngxs/form-plugin";
 import { LocationsModule } from './locations/locations.module';
 import { BikesModule } from './bikes/bikes.module';
 import { RouterModule } from '@angular/router';
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { OfflineSnackbarComponent } from "./shared/components/offline-snackbar/offline-snackbar.component";
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { TheftReportModule } from './theft-report/theft-report.module';
 
 @NgModule({
   declarations: [AppComponent, OfflineSnackbarComponent],
@@ -22,6 +24,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
     NgxsModule.forRoot([]),
     NgxsReduxDevtoolsPluginModule.forRoot(),
     NgxsStoragePluginModule.forRoot(),
+    NgxsFormPluginModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
@@ -38,6 +41,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
     }),
+    TheftReportModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

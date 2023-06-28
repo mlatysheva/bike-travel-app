@@ -1,12 +1,6 @@
 import { ILocation, ILocationData } from '../models/location.model';
 import { IBike } from "../models/bike.model";
 
-export interface AppStateModel {
-  searchQuery: string;
-  locations: ILocation[];
-  bikes: IBike[];
-}
-
 export interface SearchStateModel {
   searchQuery: string;
 }
@@ -19,4 +13,13 @@ export interface LocationsStateModel {
 export interface BikesStateModel {
   stolenBikes: IBike[];
   selectedBike: IBike | null;
+}
+
+export interface TheftStateModel {
+  stolenBikeForm: {
+    bike: IBike | null;
+    dirty: boolean;
+    status: string;
+    errors: any;
+  }
 }
