@@ -4,15 +4,20 @@ import { NgxsFormPluginModule } from "@ngxs/form-plugin";
 import { SharedModule } from "../shared/shared.module";
 import { TheftState } from "../store/slices/theft.slice";
 import { NgxsModule } from "@ngxs/store";
+import { TheftFormComponent } from './components/theft-form/theft-form.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    TheftFormComponent
+  ],
   imports: [
     CommonModule,
     SharedModule,
     NgxsModule.forFeature([TheftState]),
     NgxsFormPluginModule,
+    ReactiveFormsModule,
   ]
 })
 export class TheftReportModule {

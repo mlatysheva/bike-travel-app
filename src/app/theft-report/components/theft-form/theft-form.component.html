@@ -1,0 +1,10 @@
+<form
+  [formGroup]="theftForm"
+  ngxsForm="theftReport.stolenBikeForm"
+  (ngSubmit)="onSubmit()"
+  ngxsFormDebounce="200"
+>
+  <input type="text" formControlName="serialNumber"/>
+  <button type="submit">Melden</button>
+
+</form>
