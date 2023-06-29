@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "format": "pretty-quick --staged",
-    "precommit": "run-s format lint"
+    "precommit": "run-s format lint",
+    "format:check": "prettier --config ./.prettierrc.json --list-different \"src/{app,environments,assets}/**/*{.ts,.js,.json,.css,.scss}\""
   },
   "private": true,
   "dependencies": {

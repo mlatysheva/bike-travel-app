@@ -13,7 +13,7 @@ import { DatePipe } from "@angular/common";
 export class BikeDetailsComponent implements OnInit {
   @Select(BikesState.getSelectedBike) selectedBike$!: Observable<IBike>;
 
-  bikeDate: string = '';
+  bikeDate = '';
 
   constructor(
     private datePipe: DatePipe,

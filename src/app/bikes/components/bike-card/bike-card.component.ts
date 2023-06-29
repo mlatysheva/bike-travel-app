@@ -20,7 +20,7 @@ export class BikeCardComponent implements OnInit {
   ) {
   }
 
-  bikeDate: string = '';
+  bikeDate = '';
 
   ngOnInit() {
     if (this.bike && this.bike.date_stolen) {

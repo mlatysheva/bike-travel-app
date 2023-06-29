@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder, Validators } from "@angular/forms";
+import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Select, Store } from "@ngxs/store";
 import { TheftState } from "../../../store/slices/theft.slice";
 import { Observable, of } from "rxjs";

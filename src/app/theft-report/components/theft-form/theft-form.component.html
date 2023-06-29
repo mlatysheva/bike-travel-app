@@ -6,24 +6,24 @@
   class="theft-form"
 >
   <mat-form-field>
-    <label>Title</label>
-    <input matInput
+    <label for="title">Title</label>
+    <input matInput id="title"
            type="text" formControlName="title"/>
   </mat-form-field>
 
   <mat-form-field>
-    <label>Description</label>
-    <textarea matInput formControlName="description"></textarea>
+    <label for="description">Description</label>
+    <textarea matInput id="description" formControlName="description"></textarea>
   </mat-form-field>
 
   <mat-form-field>
-    <label>Manufacturer</label>
-    <input matInput type="text" formControlName="manufacturer_name"/>
+    <label for="manufacturer">Manufacturer</label>
+    <input matInput type="text" id="manufacturer" formControlName="manufacturer_name"/>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <label>Type of cycle</label>
-    <mat-select formControlName="cycle_type">
+    <label for="cycle_type">Type of cycle</label>
+    <mat-select id="cycle_type" formControlName="cycle_type">
       <mat-select-trigger>
         {{theftForm.controls['cycle_type'].value}}
       </mat-select-trigger>
@@ -36,8 +36,8 @@
   </mat-form-field>
 
   <mat-form-field>
-    <label>Year of manufacture</label>
-    <mat-select formControlName="year">
+    <label for="year">Year of manufacture</label>
+    <mat-select id="year" formControlName="year">
       <mat-option *ngFor="let year of years" [value]="year">
         {{ year }}
       </mat-option>
@@ -45,31 +45,31 @@
   </mat-form-field>
 
   <mat-form-field>
-    <label>Serial number</label>
-    <input matInput type="text" formControlName="serial"/>
+    <label for="serial">Serial number</label>
+    <input matInput type="text" id="serial" formControlName="serial"/>
   </mat-form-field>
 
   <mat-form-field>
-    <label>Image (if already loaded in the Internet)</label>
-    <input matInput type="text" formControlName="large_img"/>
+    <label for="image">Image (if already loaded in the Internet)</label>
+    <input matInput type="text" id="image" formControlName="large_img"/>
   </mat-form-field>
 
   <mat-form-field color="accent" appearance="fill" class="picker-date">
-    <label>Date of theft</label>
+    <label for="date">Date of theft</label>
 
-    <input matInput [matDatepicker]="picker1" formControlName="date_stolen">
+    <input matInput id="date" [matDatepicker]="picker1" formControlName="date_stolen">
     <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
     <mat-datepicker #picker1></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field>
-    <label>Location of theft</label>
-    <input matInput type="text" formControlName="stolen_location"/>
+    <label for="location">Location of theft</label>
+    <input matInput type="text" id="location" formControlName="stolen_location"/>
   </mat-form-field>
 
   <mat-form-field appearance="fill">
-    <label>Frame colors</label>
-    <mat-select formControlName="frame_colors" multiple>
+    <label for="colors">Frame colors</label>
+    <mat-select id="colors" formControlName="frame_colors" multiple>
       <mat-select-trigger>
         {{theftForm.controls['frame_colors'].value}}
       </mat-select-trigger>
@@ -82,9 +82,9 @@
   </mat-form-field>
 
   <mat-form-field>
-    <label>
-      Frame model:
-      <input matInput type="text" formControlName="frame_model"/>
+    <label for="frame">
+      Frame model
+      <input matInput id="frame" type="text" formControlName="frame_model"/>
     </label>
   </mat-form-field>
 
