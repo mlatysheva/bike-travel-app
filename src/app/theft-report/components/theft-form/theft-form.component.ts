@@ -6,6 +6,7 @@ import { Observable, of } from "rxjs";
 import { TheftStateModel } from "../../../store/state.model";
 // import { UpdateFormValue } from "../../../store/actions/theft.actions";
 import { UpdateFormValue } from "@ngxs/form-plugin";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-theft-form',
@@ -24,6 +25,7 @@ export class TheftFormComponent {
 
   constructor(
     private store: Store,
+    private router: Router,
     private formBuilder: FormBuilder,
   ) {
     this.theftForm = this.formBuilder.group({
@@ -52,9 +54,10 @@ export class TheftFormComponent {
   }
 
   onSubmit() {
-    console.log(this.theftForm.value);
     if (this.theftForm.valid) {
       this.store.dispatch(new UpdateFormValue(this.theftForm.value));
+      alert('Form was successfully submitted!');
+      this.router.navigate(['/']);
       // this.store.dispatch(new UpdateFormValue({ model: this.theftForm.value }));
     }
   }
