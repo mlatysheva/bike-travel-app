@@ -1,6 +1,6 @@
 export interface IBike {
-  id: number;
-  date_stolen: Date,
+  id: string;
+  date_stolen?: string,
   description?: string,
   cycle_type?: string,
   frame_colors?: string[],

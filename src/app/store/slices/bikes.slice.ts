@@ -59,7 +59,7 @@ export class BikesState {
 
   @Selector()
   static getBikeById(state: BikesStateModel) {
-    return (id: number) =>
+    return (id: string) =>
       state.stolenBikes.find((bike) => bike.id === id);
   }
 

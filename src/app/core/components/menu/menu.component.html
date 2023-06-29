@@ -9,4 +9,5 @@
   <div *ngIf="bikesCount$ | async">
     <a *ngIf="selectedBikeId$ | async as bike_id" mat-button routerLink="/bikes/{{ bike_id }}">Mein Rad</a>
   </div>
+  <a mat-button routerLink="/theft-report">Radklau melden</a>
 </div>

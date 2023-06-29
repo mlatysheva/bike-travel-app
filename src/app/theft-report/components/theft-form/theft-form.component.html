@@ -1,10 +1,100 @@
 <form
   [formGroup]="theftForm"
-  ngxsForm="theftReport.stolenBikeForm"
+  ngxsForm="theftReport"
   (ngSubmit)="onSubmit()"
   ngxsFormDebounce="200"
+  class="theft-form"
 >
-  <input type="text" formControlName="serialNumber"/>
-  <button type="submit">Melden</button>
+  <mat-form-field>
+    <label>Title</label>
+    <input matInput
+           type="text" formControlName="title"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Description</label>
+    <textarea matInput formControlName="description"></textarea>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Manufacturer</label>
+    <input matInput type="text" formControlName="manufacturer_name"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label>Type of cycle</label>
+    <mat-select formControlName="cycle_type">
+      <mat-select-trigger>
+        {{theftForm.controls['cycle_type'].value}}
+      </mat-select-trigger>
+
+      <mat-option *ngFor="let type of cycle_types$ | async"
+                  value="{{type}}" class="options-picker-option">
+        <p class="options-picker-text">{{type}})</p>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Year of manufacture</label>
+    <mat-select formControlName="year">
+      <mat-option *ngFor="let year of years" [value]="year">
+        {{ year }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Serial number</label>
+    <input matInput type="text" formControlName="serial"/>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Image (if already loaded in the Internet)</label>
+    <input matInput type="text" formControlName="large_img"/>
+  </mat-form-field>
+
+  <mat-form-field color="accent" appearance="fill" class="picker-date">
+    <label>Date of theft</label>
+
+    <input matInput [matDatepicker]="picker1" formControlName="date_stolen">
+    <mat-hint>dd/mm/yyyy</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+    <mat-datepicker #picker1></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>Location of theft</label>
+    <input matInput type="text" formControlName="stolen_location"/>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <label>Frame colors</label>
+    <mat-select formControlName="frame_colors" multiple>
+      <mat-select-trigger>
+        {{theftForm.controls['frame_colors'].value}}
+      </mat-select-trigger>
+
+      <mat-option *ngFor="let color of frame_colors$ | async"
+                  value="{{ color }}" class="options-picker-option">
+        <p class="options-picker-text">{{ color }})</p>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <label>
+      Frame model:
+      <input matInput type="text" formControlName="frame_model"/>
+    </label>
+  </mat-form-field>
+
+  <button
+    mat-raised-button color="primary"
+    type="submit"
+    class="action-btn"
+    [disabled]="!theftForm.valid"
+  >Melden
+  </button>
 
 </form>

@@ -23,12 +23,12 @@ export class BikeCardComponent implements OnInit {
   bikeDate: string = '';
 
   ngOnInit() {
-    if (this.bike) {
+    if (this.bike && this.bike.date_stolen) {
       this.bikeDate = this.datePipe.transform(+this.bike.date_stolen * 1000, 'medium') || '';
     }
   }
 
-  renderBikeDetails(id: number): void {
+  renderBikeDetails(id: string): void {
     if (this.bike) {
       this.store.dispatch(new SetSelectedBike(this.bike));
     }

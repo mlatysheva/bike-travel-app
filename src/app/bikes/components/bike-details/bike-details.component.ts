@@ -22,7 +22,9 @@ export class BikeDetailsComponent implements OnInit {
 
   ngOnInit() {
     this.selectedBike$.subscribe((bike: IBike) => {
-      this.bikeDate = this.datePipe.transform(+bike.date_stolen * 1000, 'medium') || '';
+      if (bike && bike.date_stolen) {
+        this.bikeDate = this.datePipe.transform(+bike.date_stolen * 1000, 'medium') || '';
+      }
     });
   }
 

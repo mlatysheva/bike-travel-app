@@ -217,13 +217,19 @@ body .slick-next {
 //  color: white;
 //}
 
-.mat-mdc-snack-bar-container, .cdk-overlay-pane {
+.mat-mdc-snack-bar-container {
   background-color: var(--secondary-color) !important;
   height: var(--footer-height);
   width: 100%;
   margin: 0 !important;
   color: white;
   box-shadow: none;
+}
+
+.cdk-overlay-pane {
+  background-color: var(--secondary-color) !important;
+  color: white;
+  box-shadow: none !important;
 }
 
 .mat-mdc-snack-bar-container .mdc-snackbar__surface {

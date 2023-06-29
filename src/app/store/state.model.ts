@@ -16,10 +16,8 @@ export interface BikesStateModel {
 }
 
 export interface TheftStateModel {
-  stolenBikeForm: {
-    bike: IBike | null;
-    dirty: boolean;
-    status: string;
-    errors: any;
-  }
+  stolenBike: IBike | null;
+  dirty: boolean;
+  status: string;
+  errors: any;
 }

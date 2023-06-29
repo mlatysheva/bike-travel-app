@@ -6,15 +6,25 @@ import { TheftState } from "../store/slices/theft.slice";
 import { NgxsModule } from "@ngxs/store";
 import { TheftFormComponent } from './components/theft-form/theft-form.component';
 import { ReactiveFormsModule } from "@angular/forms";
+import { TheftFormPageComponent } from './pages/theft-form-page/theft-form-page.component';
+import { RouterModule, Routes } from "@angular/router";
 
+const routes: Routes = [
+  {
+    path: '',
+    component: TheftFormPageComponent,
+  }
+];
 
 @NgModule({
   declarations: [
-    TheftFormComponent
+    TheftFormComponent,
+    TheftFormPageComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
+    RouterModule.forChild(routes),
     NgxsModule.forFeature([TheftState]),
     NgxsFormPluginModule,
     ReactiveFormsModule,
