@@ -11,7 +11,7 @@ import { v4 as uuidv4 } from 'uuid';
 @State<TheftStateModel>({
   name: 'theftReport',
   defaults: {
-    stolenBike: null,
+    model: null,
     dirty: false,
     status: '',
     errors: null,
@@ -24,7 +24,7 @@ export class TheftState {
     const state = ctx.getState();
     ctx.setState({
       ...state,
-      stolenBike: action.bike,
+      model: action.bike,
     });
   }
 
@@ -34,14 +34,12 @@ export class TheftState {
     { payload }: UpdateFormValue
   ) {
     const state = getState();
-    console.log('in updateFormValue, state is ', state);
-    console.log('in updateFormValue, payload is ', payload);
     patchState({
       ...state,
-      stolenBike: {
-        ...state.stolenBike,
+      model: {
+        ...state.model,
         id: uuidv4(),
-        ...payload.stolenBike,
+        ...payload.model,
       }
     });
   }
@@ -52,7 +50,7 @@ export class TheftState {
   ) {
     const state = getState();
     patchState({
-      ...state.stolenBike,
+      ...state.model,
       dirty: true,
       status: 'submitted',
     });
@@ -60,7 +58,7 @@ export class TheftState {
 
   @Selector()
   static getStolenBike(state: TheftStateModel) {
-    return state.stolenBike;
+    return state.model;
   }
 
   @Selector()
@@ -77,6 +75,4 @@ export class TheftState {
   static getErrors(state: TheftStateModel) {
     return state.errors;
   }
-
-
 }

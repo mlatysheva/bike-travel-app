@@ -4,7 +4,8 @@ import { Select, Store } from "@ngxs/store";
 import { TheftState } from "../../../store/slices/theft.slice";
 import { Observable, of } from "rxjs";
 import { TheftStateModel } from "../../../store/state.model";
-import { SubmitTheftReport, UpdateFormValue } from "../../../store/actions/theft.actions";
+// import { UpdateFormValue } from "../../../store/actions/theft.actions";
+import { UpdateFormValue } from "@ngxs/form-plugin";
 
 @Component({
   selector: 'app-theft-form',
@@ -53,7 +54,8 @@ export class TheftFormComponent {
   onSubmit() {
     console.log(this.theftForm.value);
     if (this.theftForm.valid) {
-      this.store.dispatch(new UpdateFormValue({ stolenBike: this.theftForm.value }));
+      this.store.dispatch(new UpdateFormValue(this.theftForm.value));
+      // this.store.dispatch(new UpdateFormValue({ model: this.theftForm.value }));
     }
   }
 }

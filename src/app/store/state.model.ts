@@ -16,7 +16,7 @@ export interface BikesStateModel {
 }
 
 export interface TheftStateModel {
-  stolenBike: IBike | null;
+  model: IBike | null;
   dirty: boolean;
   status: string;
   errors: any;
