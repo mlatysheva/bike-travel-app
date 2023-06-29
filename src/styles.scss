@@ -111,6 +111,7 @@ body {
   background-color: var(--dark-grey);
   box-sizing: inherit;
   overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -155,6 +156,11 @@ app-footer {
   flex-shrink: 0;
   background-color: rgba(51, 51, 51, 1);
   z-index: 100;
+}
+
+app-location-photos {
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .slick-wrapper {
@@ -238,4 +244,19 @@ body .slick-next {
   box-shadow: none !important;
 }
 
+.map-container {
+  height: 400px !important;
+  width: 550px !important;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .map-container {
+    height: 300px !important;
+    width: 300px !important;
+  }
+}
 

@@ -1,9 +1,9 @@
 .details {
-  width: 550px;
+  width: 100%;
+  max-width: 550px;
   height: 400px;
-  padding: 2rem;
   border-radius: 0px;
-  padding-left: 2.5rem;
+  padding: 2rem 2rem 2rem 2.5rem;
 }
 
 .image {
@@ -13,4 +13,10 @@
   background-size: contain;
   background-repeat: no-repeat;
   border-radius: 5px;
+}
+
+@media (max-width: 400px) {
+  .details {
+    width: 300px;
+  }
 }

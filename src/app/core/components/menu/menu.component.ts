@@ -20,4 +20,18 @@ export class MenuComponent {
   @Select(BikesState.getBikesCount) bikesCount$!: Observable<number | 0>;
 
   @Select(BikesState.getSelectedBikeId) selectedBikeId$!: Observable<number | null>;
+
+  toggleMenu() {
+    const menu = document.querySelector('.menu');
+    menu?.classList.toggle('active');
+    const hamburger = document.querySelector('.hamburger');
+    hamburger?.classList.toggle('active');
+  }
+
+  closeMenu() {
+    const menu = document.querySelector('.menu');
+    menu?.classList.remove('active');
+    const hamburger = document.querySelector('.hamburger');
+    hamburger?.classList.remove('active');
+  }
 }

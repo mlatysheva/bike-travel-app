@@ -3,3 +3,10 @@
   margin-right: 75px;
   align-self: flex-end;
 }
+
+@media (max-width: 600px) {
+
+  .action-btn {
+    margin-right: 1rem;
+  }
+}

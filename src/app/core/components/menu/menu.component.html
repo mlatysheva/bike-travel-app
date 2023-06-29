@@ -2,12 +2,26 @@
   <button mat-icon-button routerLink="/">
     <mat-icon>home</mat-icon>
   </button>
-  <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations">Orte</a>
-  <a *ngIf="selectedLocationId$ | async as place_id" mat-button routerLink="/locations/{{ place_id }}"
+  <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations" (click)="closeMenu()">Orte</a>
+  <a *ngIf="selectedLocationId$ | async as place_id"
+     mat-button routerLink="/locations/{{ place_id }}"
+     (click)="closeMenu()"
   >Mein Ort</a>
-  <a *ngIf="bikesCount$ | async" mat-button routerLink="/bikes">Fahrräder</a>
+  <a *ngIf="bikesCount$ | async"
+     mat-button routerLink="/bikes"
+     (click)="closeMenu()"
+  >Fahrräder</a>
   <div *ngIf="bikesCount$ | async">
-    <a *ngIf="selectedBikeId$ | async as bike_id" mat-button routerLink="/bikes/{{ bike_id }}">Mein Rad</a>
+    <a *ngIf="selectedBikeId$ | async as bike_id"
+       mat-button routerLink="/bikes/{{ bike_id }}"
+       (click)="closeMenu()"
+    >Mein Rad</a>
   </div>
-  <a mat-button routerLink="/theft-report">Radklau melden</a>
+  <a mat-button routerLink="/theft-report"
+     (click)="closeMenu()"
+  >Radklau melden</a>
+</div>
+
+<div class="hamburger">
+  <span class="material-icons" (click)="toggleMenu()">menu</span>
 </div>

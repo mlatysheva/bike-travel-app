@@ -19,3 +19,54 @@
   font-weight: 300;
   letter-spacing: 2px;
 }
+
+.hamburger {
+  display: none;
+}
+
+.active {
+  display: flex;
+}
+
+.material-icons {
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+
+  .menu {
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding-top: 1rem;
+    padding-right: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+
+    &.active {
+      display: none;
+    }
+  }
+}
