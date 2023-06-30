@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NetworkStatusService } from "../../services/network-status.service";
+import { NetworkStatusService } from "../../services/pwa-services/network-status.service";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
 @Component({

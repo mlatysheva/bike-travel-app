@@ -253,6 +253,10 @@ body .slick-next {
   width: 550px !important;
 }
 
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--secondary-color) !important;
+}
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.5rem;
