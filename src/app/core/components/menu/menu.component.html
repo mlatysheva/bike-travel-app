@@ -1,5 +1,5 @@
 <div class="menu">
-  <button mat-icon-button routerLink="/">
+  <button mat-icon-button routerLink="/" (click)="closeMenu()">
     <mat-icon>home</mat-icon>
   </button>
   <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations" (click)="closeMenu()">Orte</a>
@@ -12,7 +12,7 @@
      (click)="closeMenu()"
   >Fahrräder</a>
   <div *ngIf="bikesCount$ | async">
-    <a *ngIf="selectedBikeId$ | async as bike_id"
+    <a *ngIf="bike_id"
        mat-button routerLink="/bikes/{{ bike_id }}"
        (click)="closeMenu()"
     >Mein Rad</a>

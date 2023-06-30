@@ -16,11 +16,9 @@ export class OfflineSnackbarComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log('OfflineSnackbarComponent');
     this.networkStatusService.getOnlineStatus()
       .subscribe(isOnline => {
         if (!isOnline) {
-          console.log('You are offline');
           this.snackBar.open('You are offline', 'Loading cached resources...', {
             duration: 3000,
             panelClass: ['offline-snackbar'],

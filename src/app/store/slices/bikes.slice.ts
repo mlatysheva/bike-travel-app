@@ -1,7 +1,7 @@
 import { State, Action, StateContext } from '@ngxs/store';
 import { BikesStateModel } from '../state.model';
 import {
-  SetBikes,
+  SetBikes, SetBikeTypes, SetFrameColors, SetManufacturers,
   SetSelectedBike,
 } from '../actions/bikes.actions';
 import { Injectable } from '@angular/core';
@@ -13,6 +13,9 @@ import { Selector } from '@ngxs/store';
   defaults: {
     stolenBikes: [],
     selectedBike: null,
+    manufacturers: [],
+    frameColors: [],
+    bikeTypes: [],
   },
 })
 export class BikesState {
@@ -34,6 +37,36 @@ export class BikesState {
     ctx.setState({
       ...state,
       selectedBike: action.bike,
+    });
+  }
+
+  @Action(SetManufacturers)
+  setManufacturers(
+    ctx: StateContext<BikesStateModel>,
+    action: SetManufacturers
+  ) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      manufacturers: action.manufacturers,
+    });
+  }
+
+  @Action(SetFrameColors)
+  setFrameColors(ctx: StateContext<BikesStateModel>, action: SetFrameColors) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      frameColors: action.frameColors,
+    });
+  }
+
+  @Action(SetBikeTypes)
+  setBikeTypes(ctx: StateContext<BikesStateModel>, action: SetBikeTypes) {
+    const state = ctx.getState();
+    ctx.setState({
+      ...state,
+      bikeTypes: action.bikeTypes,
     });
   }
 
@@ -73,5 +106,20 @@ export class BikesState {
   static getStolenBikeLongitude(state: BikesStateModel) {
     if (!state.selectedBike?.stolen_coordinates) return null;
     return state.selectedBike?.stolen_coordinates[1];
+  }
+
+  @Selector()
+  static getManufacturers(state: BikesStateModel) {
+    return state.manufacturers;
+  }
+
+  @Selector()
+  static getFrameColors(state: BikesStateModel) {
+    return state.frameColors;
+  }
+
+  @Selector()
+  static getBikeTypes(state: BikesStateModel) {
+    return state.bikeTypes;
   }
 }
