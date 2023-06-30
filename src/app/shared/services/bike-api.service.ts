@@ -79,7 +79,6 @@ export class BikeApiService {
     return this.http.get(`${this.bikeUrl}selections/cycle_types?access_token=${environment.bikeApiKey}`)
       .pipe(take(1),
         map((response: any) => {
-          console.log(response.cycle_types);
           this.store.dispatch(new SetBikeTypes(response.cycle_types));
           return response.cycle_types;
         })

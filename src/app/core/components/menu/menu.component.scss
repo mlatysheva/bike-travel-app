@@ -33,6 +33,11 @@
   color: var(--secondary-color);
 }
 
+.hamburger >
+.material-icons {
+  font-size: 2rem;
+}
+
 @media (max-width: 768px) {
 
   .menu {
@@ -58,8 +63,8 @@
   .hamburger {
     display: block;
     position: absolute;
-    top: 1rem;
-    right: 1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     width: 2rem;
     height: 2rem;
     cursor: pointer;

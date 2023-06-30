@@ -22,9 +22,6 @@ import { IBikeType } from "../../../models/bikeType.model";
 export class TheftFormComponent implements OnInit {
   theftForm: FormGroup;
 
-  // cycle_types$: Observable<string[]> = of(['mountain', 'city', 'tandem']);
-  // frame_colors$: Observable<string[]> = of(['red', 'blue', 'green', 'black', 'white', 'yellow', 'orange', 'purple', 'pink', 'brown', 'silver', 'gray']);
-
   years: number[] = [];
 
   @Select(TheftState) stolenBikeForm$: Observable<TheftStateModel>;
@@ -51,7 +48,7 @@ export class TheftFormComponent implements OnInit {
       manufacturer_name: [''],
       serial: [''],
       stolen: [true],
-      stolen_location: [''],
+      stolen_location: ['', [Validators.required]],
       stolen_coordinates: [''],
       title: ['', [Validators.required]],
       year: [2010],
