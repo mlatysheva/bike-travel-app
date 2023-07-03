@@ -29,6 +29,9 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictTemplates": true,
+    "i18nLocale": "en",
+    "i18nFormat": "xlf",
+    "i18nFile": "src/locale/messages.en.xlf"
   }
 }

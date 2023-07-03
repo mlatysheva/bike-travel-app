@@ -2,7 +2,12 @@
   <button mat-icon-button routerLink="/" (click)="closeMenu()">
     <mat-icon>home</mat-icon>
   </button>
-  <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations" (click)="closeMenu()">Orte</a>
+  <a *ngIf="locationsCount$ | async"
+     mat-button
+     routerLink="/locations"
+     (click)="closeMenu()"
+     i18n
+  >Places</a>
   <a *ngIf="selectedLocationId$ | async as place_id"
      mat-button routerLink="/locations/{{ place_id }}"
      (click)="closeMenu()"

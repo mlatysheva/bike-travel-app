@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { Select } from '@ngxs/store';
 import { LocationsState } from '../../../store/slices/locations.slice';
 import { Observable } from 'rxjs';
@@ -23,10 +23,24 @@ export class MenuComponent implements OnInit {
 
   bike_id: number | null;
 
+  currentLanguage: string;
+
+  constructor(
+    @Inject(LOCALE_ID) protected localeId: string,
+  ) {
+    this.currentLanguage = this.localeId;
+  }
+
   ngOnInit() {
     this.selectedBikeId$.subscribe((id) => {
       this.bike_id = id;
     });
+  }
+
+  changeLanguage(language: string) {
+    const url = document.location.pathname + document.location.search;
+    // document.location.href = url.replace(this.currentLanguage, language);
+    document.location.href = `/${language}${url}`;
   }
 
   toggleMenu() {
