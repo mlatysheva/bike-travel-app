@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "start:pwa": "npm run build && http-server -p 8080 -c-1 dist/wheretogo",
+    "start:pwa:locale": "ng build --localize && http-server -p 8080 -c-1 dist/wheretogo",
     "build": "ng build --configuration production --output-hashing=none",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
