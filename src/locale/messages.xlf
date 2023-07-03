@@ -2,6 +2,27 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="7664162989768233012" datatype="html">
+        <source> The following bikes were stolen in this area </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bikes/components/bikes-list/bikes-list.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5280477871136476958" datatype="html">
+        <source>No stolen bikes were found in this area</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/bikes/components/bikes-list/bikes-list.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="207229016851125145" datatype="html">
+        <source>Developed by:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/components/footer/footer.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6555225781956047747" datatype="html">
         <source>Places</source>
         <context-group purpose="location">
@@ -46,6 +67,112 @@
         </context-group>
         <note priority="1" from="description">report-a-theft</note>
         <note priority="1" from="meaning">nav-menu</note>
+      </trans-unit>
+      <trans-unit id="5871480127019130194" datatype="html">
+        <source>Search for my stolen bike
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/locations/components/search-bike-btn/search-bike-btn.component.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1663899576567791215" datatype="html">
+        <source> The following places were found for your search </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/locations/pages/locations-page/locations-page.component.html</context>
+          <context context-type="linenumber">2,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5256292683209087978" datatype="html">
+        <source>Enter a place:</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/main/components/search-place/search-place.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5701618810648052610" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4902817035128594900" datatype="html">
+        <source>Description</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="859889886317613793" datatype="html">
+        <source>Manufacturer</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8596431740850560148" datatype="html">
+        <source>Year of manufacture</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3774402863000047936" datatype="html">
+        <source>Type of bike</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2153353687912745444" datatype="html">
+        <source>Image (if already available on the Internet)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8109860352516933182" datatype="html">
+        <source>Date of theft</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8238702593305170371" datatype="html">
+        <source>Place of theft</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8875666255063981855" datatype="html">
+        <source>Frame colors</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3534677227918186147" datatype="html">
+        <source>Mobile number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8489517785802457933" datatype="html">
+        <source>Submit </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/components/theft-form/theft-form.component.html</context>
+          <context context-type="linenumber">149,150</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6778062653353321143" datatype="html">
+        <source>Report a bike theft</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/theft-report/pages/theft-form-page/theft-form-page.component.html</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
       </trans-unit>
     </body>
   </file>

@@ -30,7 +30,12 @@
      i18n="nav-menu|report-a-theft"
   >Report a theft</a>
 
-  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="language switcher">
+  <button
+    *ngIf="environment.production"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="language switcher"
+  >
     <mat-icon>language</mat-icon>
   </button>
   <mat-menu #menu="matMenu">

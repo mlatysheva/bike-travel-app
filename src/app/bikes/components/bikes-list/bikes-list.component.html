@@ -1,6 +1,6 @@
 <div class="list-wrapper" *ngIf="bikes$ | async as bikes">
-  <h1 class="white-text">
-    Die folgenden Fahrräde wurden für Ihre Suchanfrage gefunden
+  <h1 class="white-text" i18n>
+    The following bikes were stolen in this area
   </h1>
   <div *ngFor="let bike of bikes">
     <app-bike-card [bike]="bike"></app-bike-card>
@@ -8,5 +8,5 @@
 </div>
 
 <div class="message" *ngIf="(bikes$ | async)?.length === 0">
-  <p>Keine gestohlene Fahrräde wurden für Ihre Suchangrage gefunden</p>
+  <p i18n>No stolen bikes were found in this area</p>
 </div>

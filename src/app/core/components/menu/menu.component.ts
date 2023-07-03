@@ -4,6 +4,7 @@ import { LocationsState } from '../../../store/slices/locations.slice';
 import { Observable } from 'rxjs';
 import { BikesState } from '../../../store/slices/bikes.slice';
 import { Location } from '@angular/common';
+import { environment } from "../../../../environments/environment";
 
 @Component({
   selector: 'app-menu',
@@ -22,6 +23,7 @@ export class MenuComponent implements OnInit {
   bike_id: number | null;
   currentLanguage: string;
   currentUrl: string;
+  environment = environment;
 
   localesList = [
     { code: 'en', label: 'English' },
