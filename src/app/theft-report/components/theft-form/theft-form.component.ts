@@ -5,7 +5,7 @@ import { TheftState } from "../../../store/slices/theft.slice";
 import { Observable, of } from "rxjs";
 import { TheftStateModel } from "../../../store/state.model";
 // import { UpdateFormValue } from "../../../store/actions/theft.actions";
-import { UpdateFormValue } from "@ngxs/form-plugin";
+import { ResetForm, UpdateFormValue, UpdateFormDirty } from "@ngxs/form-plugin";
 import { Router } from "@angular/router";
 import { BikeApiService } from "../../../shared/services/bike-api.service";
 import { IManufacturer } from "../../../models/manufacturer.model";
@@ -51,16 +51,8 @@ export class TheftFormComponent implements OnInit {
     return this.theftForm.controls['manufacturer_name'];
   }
 
-  get serial() {
-    return this.theftForm.controls['serial'];
-  }
-
   get date_stolen() {
     return this.theftForm.controls['date_stolen'];
-  }
-
-  get year() {
-    return this.theftForm.controls['year'];
   }
 
   get cycle_type() {
@@ -95,7 +87,7 @@ export class TheftFormComponent implements OnInit {
       stolen_location: ['', [Validators.required]],
       title: ['', [
         Validators.required,
-        Validators.pattern('[0-9A-Za-z]*'),
+        Validators.pattern('[0-9A-Za-z-]*'),
         Validators.minLength(3)
       ]],
       year: [2010],
@@ -129,7 +121,9 @@ export class TheftFormComponent implements OnInit {
     if (this.theftForm.valid) {
       this.store.dispatch(new UpdateFormValue(this.theftForm.value));
       alert('Form was successfully submitted!');
-      this.router.navigate(['/']);
+      this.store.dispatch(new ResetForm({ path: 'theftReport' }));
+      const dirtyFields = {};
+      this.store.dispatch(new UpdateFormDirty({ dirty: false, path: 'theftReport' }));      // this.router.navigate(['/']);
       // this.store.dispatch(new UpdateFormValue({ model: this.theftForm.value }));
     }
   }
@@ -149,29 +143,32 @@ export class TheftFormComponent implements OnInit {
   getTitleErrorMessage() {
     if (this.title.hasError('required')) {
       return 'Titel ist erforderlich';
+    } else if (this.title.hasError('minlength')) {
+      return this.title.hasError('minlength') ? 'Mindestens 3 Zeichen' : '';
     } else if (this.title.hasError('pattern')) {
       return 'Nur Buchstaben und Zahlen werden akzeptiert';
-    } else
-      return this.title.hasError('minLength') ? 'Mindestens 3 Zeichen' : '';
+    } else {
+      return '';
+    }
   }
 
   getEmailErrorMessage() {
-    return this.email.hasError('email') ? 'Email is invalid' : '';
+    return this.email.hasError('email') ? 'Email ist nicht gültig' : '';
   }
 
   getPhoneErrorMessage() {
     if (this.phone.hasError('pattern')) {
-      return 'Only numbers and + are accepted';
+      return 'Nur Zahlen und + werden akzeptiert';
     }
-    if (this.phone.hasError('minLength')) {
-      return 'Minimum 11 digits';
+    if (this.phone.hasError('minlength')) {
+      return 'Mindestens 11 Ziffern';
     }
-    return this.phone.hasError('maxLength') ? 'Maximum 14 digits' : '';
+    return this.phone.hasError('maxlength') ? 'Maximal 14 Ziffern' : '';
   }
 
   getDateErrorMessage() {
     return this.date_stolen.hasError('dateValidator')
-      ? 'The date of theft cannot be later than today'
+      ? 'Das Datum des Diebstahls kann nicht später als heute sein'
       : '';
   }
 }
