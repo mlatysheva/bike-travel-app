@@ -15,10 +15,5 @@ export class LocationReviewsComponent {
 
   @Select(LocationsState.getSelectedLocationRatingImage)
   ratingImageUrl$!: Observable<string>;
-
-  constructor() {
-    // this.ratingImageUrl$.subscribe((source) => {
-    //   console.log(source);
-    // });
-  }
+  
 }

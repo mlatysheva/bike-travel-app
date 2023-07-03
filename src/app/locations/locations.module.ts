@@ -10,6 +10,8 @@ import { LocationDetailsComponent } from './components/location-details/location
 import { LocationPhotosComponent } from './components/location-photos/location-photos.component';
 import { LocationReviewsComponent } from './components/location-reviews/location-reviews.component';
 import { SearchBikeBtnComponent } from './components/search-bike-btn/search-bike-btn.component';
+import { GoogleMapsModule } from "@angular/google-maps";
+import { environment } from "../../environments/environment";
 
 const routes: Routes = [
   {
@@ -38,7 +40,12 @@ const routes: Routes = [
     SharedModule,
     RouterModule.forChild(routes),
     NgOptimizedImage,
+    GoogleMapsModule,
+  ],
+  providers: [
+    { provide: 'googleMapsApiKey', useValue: environment.googleMapsApiKey }
   ],
   exports: [RouterModule],
 })
-export class LocationsModule {}
+export class LocationsModule {
+}

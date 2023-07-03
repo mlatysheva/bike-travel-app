@@ -1,9 +1,57 @@
 <div class="menu">
-  <button mat-icon-button routerLink="/">
+  <button mat-icon-button routerLink="/" (click)="closeMenu()">
     <mat-icon>home</mat-icon>
   </button>
-  <a *ngIf="locationsCount$ | async" mat-button routerLink="/locations">Orte</a>
-  <a *ngIf="selectedLocationId$ | async" mat-button routerLink="/details"
-    >Details</a
+  <a *ngIf="locationsCount$ | async"
+     mat-button
+     routerLink="/locations"
+     (click)="closeMenu()"
+     i18n="nav-menu|places"
+  >Places</a>
+  <a *ngIf="selectedLocationId$ | async as place_id"
+     mat-button routerLink="/locations/{{ place_id }}"
+     (click)="closeMenu()"
+     i18n="nav-menu|my-place"
+  >My Place</a>
+  <a *ngIf="bikesCount$ | async"
+     mat-button routerLink="/bikes"
+     (click)="closeMenu()"
+     i18n="nav-menu|bikes"
+  >Bikes</a>
+  <div *ngIf="bikesCount$ | async">
+    <a *ngIf="bike_id"
+       mat-button routerLink="/bikes/{{ bike_id }}"
+       (click)="closeMenu()"
+       i18n="nav-menu|my-bike"
+    >My Bike</a>
+  </div>
+  <a mat-button routerLink="/theft-report"
+     (click)="closeMenu()"
+     i18n="nav-menu|report-a-theft"
+  >Report a theft</a>
+
+  <button
+    *ngIf="environment.production"
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="language switcher"
   >
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item
+            (click)="changeLanguage('en')"
+    >
+      English
+    </button>
+    <button mat-menu-item
+            (click)="changeLanguage('de')"
+    >Deutsch
+    </button>
+  </mat-menu>
+
+</div>
+
+<div class="hamburger">
+  <span class="material-icons" (click)="toggleMenu()">menu</span>
 </div>

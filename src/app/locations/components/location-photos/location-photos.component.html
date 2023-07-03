@@ -1,5 +1,8 @@
 <div class="slick-wrapper">
-  <ngx-slick-carousel class="carousel" [config]="sliderConfig">
+  <ngx-slick-carousel class="carousel"
+                      [config]="sliderConfig"
+                      #slickModal="slick-carousel"
+  >
     <div
       ngxSlickItem
       *ngFor="let photo of locationPhotos$ | async"
@@ -8,7 +11,8 @@
       <img
         [src]="photo.images?.medium?.url"
         [alt]="photo.caption"
-        width="100%"
+        width="500px"
+        height="300px"
       />
     </div>
   </ngx-slick-carousel>

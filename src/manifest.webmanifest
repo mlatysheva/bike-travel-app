@@ -1,0 +1,10 @@
+{
+  "name": "wheretogo",
+  "short_name": "wheretogo",
+  "theme_color": "#99cc33",
+  "background_color": "#333",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/",
+  "icons": []
+}

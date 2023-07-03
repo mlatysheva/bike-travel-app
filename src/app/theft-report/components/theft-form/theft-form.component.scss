@@ -1,0 +1,62 @@
+.theft-form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  border-radius: 5px;
+  justify-content: center;
+  background-color: #fff;
+}
+
+label {
+  color: var(--secondary-color);
+}
+
+.picker {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  height: 60px;
+  width: 126px;
+  color: #fff !important;
+  border-radius: 0 !important;
+}
+
+::ng-deep .mdc-list-item__primary-text {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  .option-details {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+::ng-deep .mat-pseudo-checkbox {
+  display: none !important;
+}
+
+.options-picker {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  &-option {
+    padding: 7px 10px;
+  }
+
+  &-text {
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+}

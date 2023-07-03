@@ -1,10 +1,12 @@
 .action-btn {
-  width: 150px;
-  height: 50px;
-  padding: 0.5rem;
+  width: 250px;
+  margin-right: 75px;
   align-self: flex-end;
-  border: none;
-  border-radius: 5px;
-  color: white;
-  background-color: var(--secondary-color);
+}
+
+@media (max-width: 600px) {
+
+  .action-btn {
+    margin-right: 1rem;
+  }
 }

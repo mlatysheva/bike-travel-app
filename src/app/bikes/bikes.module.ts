@@ -7,25 +7,37 @@ import { BikeCardComponent } from './components/bike-card/bike-card.component';
 import { RouterModule, Routes } from "@angular/router";
 import { NgxsModule } from "@ngxs/store";
 import { BikesState } from "../store/slices/bikes.slice";
+import { SelectedBikePageComponent } from './pages/selected-bike-page/selected-bike-page.component';
+import { DatePipe } from "@angular/common";
+import { BikeDetailsComponent } from './components/bike-details/bike-details.component';
 
 const routes: Routes = [
   {
     path: '',
     component: SearchBikePageComponent,
   },
+  {
+    path: ':id',
+    component: SelectedBikePageComponent,
+  }
 ];
 
 @NgModule({
   declarations: [
     SearchBikePageComponent,
     BikesListComponent,
-    BikeCardComponent
+    BikeCardComponent,
+    SelectedBikePageComponent,
+    BikeDetailsComponent
   ],
   imports: [
     CommonModule,
     SharedModule,
     RouterModule.forChild(routes),
     NgxsModule.forFeature([BikesState]),
+  ],
+  providers: [
+    DatePipe,
   ],
   exports: [RouterModule],
 })

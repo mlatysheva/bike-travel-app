@@ -1,7 +1,7 @@
 .search-container {
   max-width: 400px;
-  margin: 2rem;
-  margin-top: 7rem;
+  margin-top: 8rem;
+  margin-left: 1.5rem;
   padding: 25px;
   border-radius: 10px;
   display: flex;
@@ -13,4 +13,10 @@
 
 .label {
   margin-bottom: 1rem;
+}
+
+@media (max-width: 500px) {
+  .search-container {
+    margin-left: 0;
+  }
 }

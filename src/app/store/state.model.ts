@@ -1,11 +1,7 @@
 import { ILocation, ILocationData } from '../models/location.model';
 import { IBike } from "../models/bike.model";
-
-export interface AppStateModel {
-  searchQuery: string;
-  locations: ILocation[];
-  bikes: IBike[];
-}
+import { IColor } from "../models/color.model";
+import { IBikeType } from "../models/bikeType.model";
 
 export interface SearchStateModel {
   searchQuery: string;
@@ -19,4 +15,14 @@ export interface LocationsStateModel {
 export interface BikesStateModel {
   stolenBikes: IBike[];
   selectedBike: IBike | null;
+  manufacturers: any[];
+  frameColors: IColor[];
+  bikeTypes: IBikeType[];
+}
+
+export interface TheftStateModel {
+  model: IBike | null;
+  dirty: boolean;
+  status: string;
+  errors: any;
 }

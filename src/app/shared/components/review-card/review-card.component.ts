@@ -8,4 +8,5 @@ import { IReview } from '../../../models/reviews.model';
 })
 export class ReviewCardComponent {
   @Input() review!: IReview;
+
 }

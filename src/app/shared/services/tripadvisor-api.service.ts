@@ -1,16 +1,23 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { forkJoin, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { environment } from '../../../einvironments/environment';
-import { apiUrl } from '../../constants/apiUrl';
+import { environment } from '../../../environments/environment';
+import { apiUrl, ORIGIN, REFERER } from '../../constants/apiUrl';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TripadvisorAPIService {
   private baseUrl = apiUrl;
-  constructor(private http: HttpClient) {}
+
+  constructor(private http: HttpClient) {
+  }
+
+  headers = new HttpHeaders({
+    'Origin': ORIGIN,
+    'Referer': REFERER,
+  });
 
   fetchLocations(searchQuery: string): Observable<any> {
     return this.http.get(

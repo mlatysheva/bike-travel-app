@@ -1,5 +1,21 @@
 .bike-card {
-  width: 500px;
+  width: 400px;
   height: 300px;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
+
+.bold-text {
+  font-weight: 400;
+}
+
+@media (max-width: 400px) {
+  .bike-card {
+    width: 300px;
+  }
+}
+
+
+

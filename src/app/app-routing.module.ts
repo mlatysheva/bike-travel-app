@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'main', pathMatch: 'full'},
+  { path: '', redirectTo: 'en/main', pathMatch: 'full' },
   {
     path: 'main',
     loadChildren: () => import('./main/main.module').then((m) => m.MainModule),
@@ -15,6 +15,10 @@ const routes: Routes = [
   {
     path: 'bikes',
     loadChildren: () => import('./bikes/bikes.module').then((m) => m.BikesModule),
+  },
+  {
+    path: 'theft-report',
+    loadChildren: () => import('./theft-report/theft-report.module').then((m) => m.TheftReportModule),
   }
 ];
 
@@ -22,4 +26,5 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}

@@ -1,0 +1,10 @@
+<mat-card *ngIf="selectedBike$ | async as bike" class="details">
+  <div class="image" [ngStyle]="{'background-image': 'url(' + bike.large_img + ')'}"></div>
+
+  <mat-card-content>
+    <p>{{ bike.description }}</p>
+    <p>Gestolen am: {{ bikeDate }}</p>
+    <p>Gestolen in: {{ bike.stolen_location }}</p>
+
+  </mat-card-content>
+</mat-card>

@@ -1,4 +1,28 @@
 .list-wrapper {
   display: flex;
   flex-wrap: wrap;
+  margin: 0 auto;
+}
+
+.white-text {
+  padding-left: 0.5rem;
+}
+
+.message {
+  width: 100%;
+  max-width: 550px;
+  height: 100px;
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 0.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 400px) {
+  .message {
+    margin: 0 auto;
+    width: 300px;
+  }
 }

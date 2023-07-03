@@ -29,3 +29,9 @@
     color: var(--secondary-color);
   }
 }
+
+@media (max-width: 768px) {
+  .developer-info {
+    justify-content: flex-end;
+  }
+}

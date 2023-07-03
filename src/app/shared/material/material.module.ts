@@ -14,6 +14,9 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatDatepickerModule } from "@angular/material/datepicker";
+import { MatNativeDateModule } from "@angular/material/core";
 
 const MaterialComponents = [
   MatRadioModule,
@@ -23,6 +26,8 @@ const MaterialComponents = [
   MatButtonModule,
   MatIconModule,
   MatCardModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
   MatProgressBarModule,
   MatSortModule,
   MatCheckboxModule,
@@ -31,10 +36,12 @@ const MaterialComponents = [
   MatButtonToggleModule,
   MatMenuModule,
   MatToolbarModule,
+  MatSnackBarModule,
 ];
 
 @NgModule({
   imports: [MaterialComponents],
   exports: [MaterialComponents],
 })
-export class MaterialModule {}
+export class MaterialModule {
+}

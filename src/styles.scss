@@ -86,6 +86,11 @@ $where_client-theme: mat.define-light-theme(
   color: white;
 }
 
+* {
+  //border: 1px solid red;
+  box-sizing: border-box;
+}
+
 :root {
   --light-grey: #e0e0e0;
   --grey: #969696;
@@ -102,6 +107,8 @@ $where_client-theme: mat.define-light-theme(
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.05rem;
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -109,6 +116,7 @@ body {
   background-color: var(--dark-grey);
   box-sizing: inherit;
   overflow-y: scroll;
+  overflow-x: hidden;
   display: flex;
   flex-direction: column;
 }
@@ -118,6 +126,10 @@ h2,
 h3 {
   font-family: Ubuntu, "Helvetica Neue", sans-serif;
   font-weight: 400;
+}
+
+p {
+  line-height: 150%;
 }
 
 app-root {
@@ -135,13 +147,12 @@ app-header {
 
 app-main-page,
 app-locations-page,
-app-selected-location-page {
+app-selected-location-page,
+app-selected-bike-page,
+app-search-bike-page {
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  overflow-y: scroll;
 }
 
 app-footer {
@@ -152,23 +163,115 @@ app-footer {
   z-index: 100;
 }
 
+app-location-photos {
+  width: 100%;
+  overflow-x: hidden;
+}
+
 .slick-wrapper {
   width: 100%;
-  height: 200px;
   margin: 1rem auto;
-  overflow-y: hidden;
+  //overflow-y: hidden;
 }
 
 .slick-slider {
   width: 88%;
-  margin: auto;
+  margin: 0 auto;
 }
 
 body .slick-prev,
 body .slick-next {
-  //height: 100%;
-  //width: 100%;
   height: 45px;
   width: 40px;
   z-index: 100;
 }
+
+body .slick-prev {
+  left: -5rem;
+}
+
+body .slick-next {
+  right: -5rem;
+}
+
+.page-wrapper {
+  width: 100%;
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: flex;
+  padding: 0 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.white-text {
+  color: white;
+}
+
+.action-btn {
+  height: 60px;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: white;
+  background-color: var(--secondary-color);
+}
+
+//.offline-snackbar {
+//  margin: 0;
+//  width: var(--max-content-width);
+//  height: var(--footer-height);
+//  background-color: var(--secondary-color) !important;
+//  color: white;
+//}
+
+.mat-mdc-snack-bar-container {
+  background-color: var(--secondary-color) !important;
+  height: var(--footer-height);
+  width: 100%;
+  margin: 0 !important;
+  color: white;
+  box-shadow: none;
+}
+
+//.cdk-overlay-container .cdk-overlay-pane {
+//  width: 100%;
+//}
+.cdk-overlay-container .cdk-overlay-pane .mat-mdc-snack-bar-container {
+  width: 100%;
+}
+
+.cdk-overlay-pane {
+  background-color: var(--secondary-color) !important;
+  color: white;
+  box-shadow: none !important;
+}
+
+.mat-mdc-snack-bar-container .mdc-snackbar__surface {
+  background-color: var(--secondary-color) !important;
+  color: white;
+  box-shadow: none !important;
+}
+
+.map-container {
+  height: 400px !important;
+  width: 550px !important;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+  color: var(--secondary-color) !important;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .map-container {
+    height: 300px !important;
+    width: 300px !important;
+  }
+}
+
