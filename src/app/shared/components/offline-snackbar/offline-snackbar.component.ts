@@ -20,7 +20,7 @@ export class OfflineSnackbarComponent implements OnInit {
       .subscribe(isOnline => {
         if (!isOnline) {
           this.snackBar.open('You are offline', 'Loading cached resources...', {
-            duration: 3000,
+            duration: 30000,
             panelClass: ['offline-snackbar'],
           });
         }

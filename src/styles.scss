@@ -236,6 +236,13 @@ body .slick-next {
   box-shadow: none;
 }
 
+//.cdk-overlay-container .cdk-overlay-pane {
+//  width: 100%;
+//}
+.cdk-overlay-container .cdk-overlay-pane .mat-mdc-snack-bar-container {
+  width: 100%;
+}
+
 .cdk-overlay-pane {
   background-color: var(--secondary-color) !important;
   color: white;

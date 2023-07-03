@@ -29,6 +29,7 @@
             "index": "src/index.html",
             "main": "src/main.ts",
             "localize": true,
+            "aot": true,
             "i18nMissingTranslation": "warning",
             "polyfills": [
               "zone.js"
@@ -61,10 +62,7 @@
           },
           "configurations": {
             "production": {
-              "localize": [
-                "en",
-                "de"
-              ],
+              "localize": true,
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
@@ -91,7 +89,10 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "localize": [
+                "de"
+              ]
             }
           },
           "defaultConfiguration": "production"

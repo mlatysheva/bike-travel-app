@@ -6,25 +6,45 @@
      mat-button
      routerLink="/locations"
      (click)="closeMenu()"
-     i18n
+     i18n="nav-menu|places"
   >Places</a>
   <a *ngIf="selectedLocationId$ | async as place_id"
      mat-button routerLink="/locations/{{ place_id }}"
      (click)="closeMenu()"
-  >Mein Ort</a>
+     i18n="nav-menu|my-place"
+  >My Place</a>
   <a *ngIf="bikesCount$ | async"
      mat-button routerLink="/bikes"
      (click)="closeMenu()"
-  >Fahrräder</a>
+     i18n="nav-menu|bikes"
+  >Bikes</a>
   <div *ngIf="bikesCount$ | async">
     <a *ngIf="bike_id"
        mat-button routerLink="/bikes/{{ bike_id }}"
        (click)="closeMenu()"
-    >Mein Rad</a>
+       i18n="nav-menu|my-bike"
+    >My Bike</a>
   </div>
   <a mat-button routerLink="/theft-report"
      (click)="closeMenu()"
-  >Diebstahl melden</a>
+     i18n="nav-menu|report-a-theft"
+  >Report a theft</a>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="language switcher">
+    <mat-icon>language</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item
+            (click)="changeLanguage('en')"
+    >
+      English
+    </button>
+    <button mat-menu-item
+            (click)="changeLanguage('de')"
+    >Deutsch
+    </button>
+  </mat-menu>
+
 </div>
 
 <div class="hamburger">
