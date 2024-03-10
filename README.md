@@ -65,7 +65,7 @@ The mobile menu:
 
 The theft report in the mobile version:
 
-![Theft report mobile](/screenshots/mobile_bike-form.png)
+![Theft report mobile](/screenshots/mobile_theft-form.png)
 
 The app uses PWA functionality and with meny features available offline:
 
