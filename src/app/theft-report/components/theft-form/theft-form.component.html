@@ -32,7 +32,7 @@
 
       <mat-option *ngFor="let manufacturer of manufacturers$ | async"
                   value="{{ manufacturer.name }}" class="options-picker-option">
-        <p class="options-picker-text">{{ manufacturer.name}})</p>
+        <p class="options-picker-text">{{ manufacturer.name}}</p>
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -55,7 +55,7 @@
 
       <mat-option *ngFor="let type of cycle_types$ | async"
                   value="{{ type.name }}" class="options-picker-option">
-        <p class="options-picker-text">{{ type.name }})</p>
+        <p class="options-picker-text">{{ type.name }}</p>
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -109,7 +109,7 @@
 
       <mat-option *ngFor="let color of frame_colors$ | async"
                   value="{{ color.name }}" class="options-picker-option">
-        <p class="options-picker-text">{{ color.name }})</p>
+        <p class="options-picker-text">{{ color.name }}</p>
       </mat-option>
     </mat-select>
   </mat-form-field>

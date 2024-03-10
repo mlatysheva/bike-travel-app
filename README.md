@@ -1,27 +1,74 @@
-# Wheretogo
+# Bike Travel App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+## The app offers the following user features:
 
-## Development server
+- The user can search for a place to travel
+- The place search results are fetched from Tripadvisor as a list of cards
+- By clicking on a card the user receives more detailed information from Tripadvisor including reviews
+- The user can look for bikes which were stolen around this location and reported to the Bike Index open API
+- The bike search results are rendered as a list of cards
+- The user can click on a particular card to see bike details
+- The user can report a bike theft through a form with validation
+- The form data is sent to the Bike Index open API
+- API calls to Tripadvisor and Bike Index to fetch data
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Stack used and tech features:
+- Angular v.16
+- NgXS state manager
+- RxJS library for asyncronous calls
+- PWA (progressive web application) features
+- Two language versions (Egnlish and German)
+- From validation
+- Typescript
+- Calls to Tripadivsor and Bike Index APIs
+- Responsive design
 
-## Code scaffolding
+## Functionality
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Homescreen to search for a place to travel. The app has two language versions:
 
-## Build
+![Homescreen English](/screenshots/homescreen_en.png)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Homescreen German](/screenshots/homescreen_de.png)
 
-## Running unit tests
+The places are fetched from the Tripadvisor API and are rendered as cards:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![List of places](/screenshots/found-locations.png)
 
-## Running end-to-end tests
+By clicking on a card, the user sees detailed information fetched from the Tripadvisor API, including reviews:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+![Details of a location](/screenshots/selected-place.png)
 
-## Further help
+The user can looks for the bikes stolen around the selected location:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Stolen bikes](/screenshots/stolen-bikes.png)
+
+The user can see details of a particular stolen bike:
+
+![Stolen bikd](/screenshots/selected-bike.png)
+
+The user can file a theft report with information about his/her stolen bike:
+
+![Theft report](/screenshots/theft-report.png)
+
+The form has field validation options:
+
+![Theft report validation](/screenshots/theft-report_validation.png)
+
+The app has responsive design:
+
+![Homescreen reponsive](/screenshots/mobile_homescreen.png)
+
+The mobile menu:
+
+![Mobile menu](/screenshots/mobile_menu.png)
+
+The theft report in the mobile version:
+
+![Theft report mobile](/screenshots/mobile_bike-form.png)
+
+The app uses PWA functionality and with meny features available offline:
+
+![Offline Notification](/screenshots/pwa_offline-message.png)
+
+The scripts to operate the app are provided in the `package.json` file in the section `scripts`.

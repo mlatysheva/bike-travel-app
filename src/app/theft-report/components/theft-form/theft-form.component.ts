@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, AbstractControl, ValidationErrors } from "@angular/forms";
 import { Select, Store } from "@ngxs/store";
 import { TheftState } from "../../../store/slices/theft.slice";
-import { Observable, of } from "rxjs";
+import { Observable } from "rxjs";
 import { TheftStateModel } from "../../../store/state.model";
 // import { UpdateFormValue } from "../../../store/actions/theft.actions";
 import { ResetForm, UpdateFormValue, UpdateFormDirty } from "@ngxs/form-plugin";
